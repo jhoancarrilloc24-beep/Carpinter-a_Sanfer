@@ -1,13 +1,302 @@
-
-.logo{
-    width: 120px;
-    height: auto;
-    display: block;
-    margin-left: 0;
-    margin-top: 10px;
+/* --- CONFIGURACIÓN GENERAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
 }
 
-.body{
-    
-    margin: auto;
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- LOGO --- */
+.logo {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 10;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* --- ESTILOS DE LOS CÍRCULOS DE FONDO (GRADIENTES DILUIDOS) --- */
+/* --- ESTILOS DE LOS CÍRCULOS DE FONDO (MÁS NARANJAS Y VISIBLES) --- */
+.circulo-contenido {
+    position: absolute;
+    border-radius: 50%;
+    /* Se cambia el tono a un naranja cálido brillante con mayor presencia/opacidad */
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.95) 0%, rgba(234, 88, 12, 0.75) 70%, rgba(245, 158, 11, 0.2) 100%);
+    filter: drop-shadow(0px 4px 10px rgba(234, 88, 12, 0.25)); /* Sombra suave opcional para realzar */
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Grandes */
+.circulo-grande-1 {
+    width: 380px;
+    height: 380px;
+    top: -100px;
+    left: -100px;
+}
+
+.circulo-grande-2 {
+    width: 450px;
+    height: 450px;
+    bottom: -150px;
+    right: -120px;
+}
+
+/* Medianos */
+.mediano-1 { width: 140px; height: 140px; top: 15px; left: 290px; }
+.mediano-2 { width: 110px; height: 110px; top: 15px; right: 290px; }
+.mediano-3 { width: 130px; height: 130px; top: 220px; right: 230px; }
+.mediano-4 { width: 120px; height: 120px; bottom: 170px; left: 120px; }
+.mediano-5 { width: 160px; height: 160px; bottom: 80px; left: 300px; }
+.mediano-6 { width: 130px; height: 130px; top: 10px; right: 20px; }
+
+/* Pequeños */
+.pequeno-1 { width: 45px; height: 45px; top: 310px; left: 385px; }
+.pequeno-2 { width: 55px; height: 55px; bottom: 210px; right: 300px; }
+.pequeno-3 { width: 40px; height: 40px; bottom: 80px; left: 75px; }
+.pequeno-4 { width: 45px; height: 45px; bottom: 35px; left: 210px; }
+.pequeno-5 { width: 50px; height: 50px; bottom: 100px; left: 430px; }
+.pequeno-6 { width: 25px; height: 25px; bottom: 20px; right: 380px; }
+.pequeno-7 { width: 45px; height: 45px; top: 350px; right: 115px; }
+
+
+/* --- CONTENEDOR Y FORMULARIO --- */
+.login-container {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.formulario-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* --- AVATAR SUPERIOR --- */
+.avatar-container {
+    margin-bottom: 12px;
+}
+
+.avatar-ring {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background-color: #fce8a6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-icon {
+    width: 48px;
+    height: 48px;
+    color: #000000;
+}
+
+/* --- TÍTULO --- */
+.titulo-form {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* --- GRUPOS DE INPUT Y LABELS --- */
+.grupo-input {
+    width: 100%;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.label-form {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+    font-family: 'Georgia', serif; /* Estilo clásico similar al diseño */
+}
+
+/* Estilo para colocar "¿No tienes una cuenta?" al lado del Label de Correo */
+.formulario-login {
+    position: relative;
+}
+
+.enlace-secundario {
+    position: absolute;
+    top: 154px;
+    right: 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #b86b32;
+    text-decoration: none;
+    z-index: 6;
+}
+
+.input-form {
+    width: 100%;
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    border: 1px solid #707070;
+    border-radius: 25px;
+    outline: none;
+    background-color: transparent;
+    color: #333333;
+    transition: border-color 0.3s ease;
+}
+
+.input-form::placeholder {
+    color: #a0a0a0;
+    font-weight: 300;
+}
+
+.input-form:focus {
+    border-color: #b86b32;
+}
+
+/* --- ENLACE OLVIDO CONTRASEÑA --- */
+.acciones-form {
+    width: 100%;
+    text-align: left;
+    margin-top: -5px;
+    margin-bottom: 25px;
+}
+
+.enlace-olvido {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #b86b32;
+    text-decoration: none;
+}
+
+.enlace-secundario:hover,
+.enlace-olvido:hover {
+    text-decoration: underline;
+}
+
+/* --- BOTÓN DE SUBMIT --- */
+.btn-submit {
+    width: 140px;
+    padding: 10px 0;
+    background-color: #a86c43;
+    color: #ffffff;
+    border: 1px solid #6e4121;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.btn-submit:hover {
+    background-color: #925b34;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
+
+/* ===================================================
+   ADAPTABILIDAD PARA MÓVILES Y PANTALLAS PEQUEÑAS
+   =================================================== */
+
+/* Pantallas medianas (Tablets: 768px o menos) */
+@media (max-width: 768px) {
+    /* Ocultamos los círculos medianos secundarios para limpiar espacio */
+    .mediano-2, 
+    .mediano-5, 
+    .mediano-6 {
+        display: none;
+    }
+
+    /* Ocultamos algunos círculos pequeños */
+    .pequeno-2, 
+    .pequeno-6, 
+    .pequeno-7 {
+        display: none;
+    }
+
+    /* Reducimos ligeramente el tamaño de las burbujas gigantes de las esquinas */
+    .circulo-grande-1 {
+        width: 280px;
+        height: 280px;
+        top: -80px;
+        left: -80px;
+    }
+
+    .circulo-grande-2 {
+        width: 320px;
+        height: 320px;
+        bottom: -100px;
+        right: -80px;
+    }
+}
+
+
+/* Pantallas pequeñas (Celulares: 480px o menos) */
+@media (max-width: 480px) {
+    /* En móviles dejamos solo los círculos esenciales */
+    .mediano-1, 
+    .mediano-3, 
+    .mediano-4 {
+        display: none;
+    }
+
+    .pequeno-1, 
+    .pequeno-3, 
+    .pequeno-4, 
+    .pequeno-5 {
+        display: none;
+    }
+
+    /* Reducimos aún más las esquinas para que no tapen el formulario ni el logo */
+    .circulo-grande-1 {
+        width: 200px;
+        height: 200px;
+        top: -60px;
+        left: -60px;
+    }
+
+    .circulo-grande-2 {
+        width: 230px;
+        height: 230px;
+        bottom: -70px;
+        right: -60px;
+    }
+
+    /* Ajuste de márgenes del contenedor para móviles */
+    .login-container {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    /* Ajuste del tamaño del logo en celular */
+    .logo {
+        width: 70px;
+        height: 70px;
+        top: 15px;
+        left: 15px;
+    }
 }
