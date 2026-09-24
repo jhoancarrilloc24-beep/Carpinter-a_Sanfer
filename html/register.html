@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <!-- Vinculación del archivo CSS externo -->
+    <link rel="stylesheet" href="../css/registre_style.css">
+</head>
+<body>
+    <!-- Logo de la página -->
+    <img src="../assets/logo_campinteria.jpeg" alt="Logo oficial de Carpintería" class="logo">
+
+    <!-- Elementos decorativos (círculos de fondo) -->
+    <div class="circulo-contenido circulo-grande-1"></div>
+    <div class="circulo-contenido circulo-grande-2"></div>
+    <div class="circulo-contenido circulo-mediano mediano-1"></div> 
+    <div class="circulo-contenido circulo-mediano mediano-2"></div> 
+    <div class="circulo-contenido circulo-mediano mediano-3"></div>
+    <div class="circulo-contenido circulo-mediano mediano-4"></div>
+    <div class="circulo-contenido circulo-mediano mediano-5"></div>
+    <div class="circulo-contenido circulo-mediano mediano-6"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-1"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-2"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-3"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-4"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-5"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-6"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-7"></div>
+
+    <main class="register_container">
+
+        <form action="#" method="POST" id="formulario_registro" name="formulario_registro" class="formulario_registro">
+
+            <!-- Ícono de usuario superior en halo circular -->
+            <div class="avatar-container">
+                <div class="avatar-ring">
+                    <svg class="avatar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Título -->
+            <h1 class="titulo_formulario">Crear cuenta</h1>
+
+            <!-- Selector de rol -->
+            <div class="selector-rol">
+                <button type="button" class="btn-rol activo" id="btn-cliente" onclick="seleccionarRol('cliente')">
+                    Cliente
+                </button>
+                <button type="button" class="btn-rol" id="btn-admin" onclick="seleccionarRol('admin')">
+                    Administrador
+                </button>
+            </div>
+
+            <!-- Enlace de regreso al login -->
+            <a href="../html/login.html" class="enlace-login">¿Tienes cuenta?</a>
+
+            <!-- Envoltorio Grid para los inputs de 2 columnas -->
+             <div class="grid-inputs">
+
+                <div class="grupo-input">
+                    <label for="nombre" class="label-form">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" class="input-form" placeholder="Ingresa tu nombre" required>
+                </div>
+                
+                <div class="grupo-input">
+                    <label for="apellido" class="label-form">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" class="input-form" placeholder="Ingresa tu apellido" required>
+                </div>
+                
+                <div class="grupo-input">
+                    <label for="telefono" class="label-form">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" class="input-form" placeholder="Ingresa tu teléfono" required>
+                </div>
+                
+                <div class="grupo-input">
+                    <label for="direccion" class="label-form">Dirección</label>
+                    <input type="text" id="direccion" name="direccion" class="input-form" placeholder="Ingresa tu dirección" required>
+                </div>
+                
+                <div class="grupo-input">
+                    <label for="password" class="label-form">Contraseña</label>
+                    <input type="password" id="password" name="password" class="input-form" placeholder="Ingresa una contraseña" required>
+                </div>
+                
+                <div class="grupo-input">
+                    <label for="email" class="label-form">Correo</label>
+                    <input type="email" id="email" name="email" class="input-form" placeholder="Ingresa un correo electrónico" required>
+                </div>
+            </div>
+            
+            <!-- Campo especial para Administrador (Ocupa el centro abajo) se muestra al precionar Administrador-->
+            <div class="grupo-input grupo-admin" id="grupo-clave-admin" style="display: none;">
+                <label for="clave-admin" class="label-form">Clave de administrador</label>
+                <input type="password" id="clave-admin" name="clave_admin" class="input-form" placeholder="Ingresa la clave del taller">
+            </div>
+
+            <button type="submit" id="btn-registrarse" name="registrarse" class="btn-submit">
+                Registrarse
+            </button>
+        </form>
+    </main>
+
+    <script src="../js/register_fuction.js"></script>
+</body>
+</html>

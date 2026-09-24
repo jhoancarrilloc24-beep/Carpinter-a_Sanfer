@@ -1,0 +1,388 @@
+/*CONFIGURACIÓN GENERAL Y CONTENEDOR PRINCIPAL*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+.register_container {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 650px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.formulario_registro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+/* --- LOGO --- */
+.logo {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 10;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+/*AVATAR / ÍCONO SUPERIOR CON ARO*/
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.avatar-ring {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #f59e0b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.avatar-icon {
+    width: 45px;
+    height: 45px;
+    color: #000000;
+}
+
+/* TÍTULO Y ENLACES */
+.titulo_formulario {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #000000;
+    margin: 5px 0 10px 0;
+    text-align: center;
+}
+
+.enlace-login {
+    color: #ea580c;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    margin: 10px 0 20px 0;
+    align-self: flex-start;
+    padding-left: 25px; /* Alineado con el inicio del grid */
+}
+
+.enlace-login:hover {
+    text-decoration: underline;
+}
+
+/*GRID DE CAMPOS DE ENTRADA (2 COLUMNAS COMO EN LA IMAGEN)*/
+.grid-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 30px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.label-form {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #1c1917;
+    margin-bottom: 5px;
+}
+
+.input-form {
+    width: 100%;
+    height: 38px;
+    padding: 0 15px;
+    border: 1.5px solid #78716c;
+    border-radius: 20px; /* Bordes ovalados pildora */
+    font-size: 0.85rem;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.input-form::placeholder {
+    color: #a8a29e;
+    font-size: 0.8rem;
+}
+
+.input-form:focus {
+    border-color: #ea580c;
+    box-shadow: 0 0 5px rgba(234, 88, 12, 0.4);
+}
+
+/* Campo centrado de clave de administrador */
+.grupo-admin {
+    max-width: 280px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.grupo-admin .label-form {
+    text-align: center;
+}
+
+
+   /* BOTÓN SUBMIT (INICIAR / REGISTRARSE) */
+
+.btn-submit {
+    margin-top: 15px;
+    width: 140px;
+    height: 40px;
+    background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+    color: #ffffff;
+    border: 1px solid #7c2d12;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(234, 88, 12, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 14px rgba(234, 88, 12, 0.45);
+}
+
+
+/* --- CONTENEDOR PRINCIPAL DE LA BARRA --- */
+.selector-rol {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 320px; /* Ajusta el ancho según el diseño */
+  height: 38px;
+  background: linear-gradient(to right, #f6d365 0%, #a88b4a 100%); /* Degradado dorado/café */
+  border: 1px solid #4a3b2c;
+  border-radius: 20px; /* Bordes redondeados píldora */
+  padding: 3px;
+  margin: 15px auto;
+  box-sizing: border-box;
+}
+
+/* --- BARRA CON COLORES MÁS VIVOS Y CONTRASTE --- */
+.selector-rol {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 320px;
+  height: 40px;
+  /* Degradado naranja/dorado más saturado y vibrante */
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  border: 1.5px solid #9a3412;
+  border-radius: 20px;
+  padding: 3px;
+  margin: 15px auto;
+  box-sizing: border-box;
+  /* Sombra suave naranja para integrarse con las burbujas de fondo */
+  box-shadow: 0px 4px 12px rgba(234, 88, 12, 0.35);
+  position: relative;
+  z-index: 10; /* Evita que el texto quede opacado por burbujas de fondo */
+}
+
+/* --- BOTONES DE TEXTO DENTRO DE LA BARRA --- */
+.btn-rol {
+  flex: 1;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: #fff7ed; /* Blanco cálido para el rol no seleccionado */
+  font-family: 'Georgia', serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- OPCIÓN SELECCIONADA (Resaltada en fondo claro dentro de la barra) --- */
+.btn-rol.activo {
+  background-color: #fef3c7; /* Resplandor claro de contraste */
+  color: #7c2d12; /* Texto café/marrón oscuro bien legible */
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-rol:hover:not(.activo) {
+  color: #ffffff;
+}
+
+
+/* --- ESTILOS DE LOS CÍRCULOS DE FONDO (GRADIENTES DILUIDOS) --- */
+/* --- ESTILOS DE LOS CÍRCULOS DE FONDO (MÁS NARANJAS Y VISIBLES) --- */
+.circulo-contenido {
+    position: absolute;
+    border-radius: 50%;
+    /* Se cambia el tono a un naranja cálido brillante con mayor presencia/opacidad */
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.95) 0%, rgba(234, 88, 12, 0.75) 70%, rgba(245, 158, 11, 0.2) 100%);
+    filter: drop-shadow(0px 4px 10px rgba(234, 88, 12, 0.25)); /* Sombra suave opcional para realzar */
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Grandes */
+.circulo-grande-1 {
+    width: 380px;
+    height: 380px;
+    top: -100px;
+    left: -100px;
+}
+
+.circulo-grande-2 {
+    width: 450px;
+    height: 450px;
+    bottom: -150px;
+    right: -120px;
+}
+
+/* Medianos */
+.mediano-1 { width: 140px; height: 140px; top: 15px; left: 290px; }
+.mediano-2 { width: 110px; height: 110px; top: 15px; right: 290px; }
+.mediano-3 { width: 130px; height: 130px; top: 220px; right: 230px; }
+.mediano-4 { width: 120px; height: 120px; bottom: 170px; left: 120px; }
+.mediano-5 { width: 160px; height: 160px; bottom: 80px; left: 300px; }
+.mediano-6 { width: 130px; height: 130px; top: 10px; right: 20px; }
+
+/* Pequeños */
+.pequeno-1 { width: 45px; height: 45px; top: 310px; left: 385px; }
+.pequeno-2 { width: 55px; height: 55px; bottom: 210px; right: 300px; }
+.pequeno-3 { width: 40px; height: 40px; bottom: 80px; left: 75px; }
+.pequeno-4 { width: 45px; height: 45px; bottom: 35px; left: 210px; }
+.pequeno-5 { width: 50px; height: 50px; bottom: 100px; left: 430px; }
+.pequeno-6 { width: 25px; height: 25px; bottom: 20px; right: 380px; }
+.pequeno-7 { width: 45px; height: 45px; top: 350px; right: 115px; }
+
+
+
+
+
+
+
+/*ADAPTACIÓN RESPONSIVA ADICIONAL*/
+
+/*adaptación de inputs*/
+
+@media(max-width: 600px) {
+    /* En pantallas muy angostas pasa de 2 columnas a 1 sola */
+    .grid-inputs {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .enlace-login {
+        padding-left: 0;
+        align-self: center;
+    }
+}
+
+/* Pantallas medianas (Tablets: 768px o menos) */
+@media (max-width: 768px) {
+    /* Ocultamos los círculos medianos secundarios para limpiar espacio */
+    .mediano-2, 
+    .mediano-5, 
+    .mediano-6 {
+        display: none;
+    }
+
+    /* Ocultamos algunos círculos pequeños */
+    .pequeno-2, 
+    .pequeno-6, 
+    .pequeno-7 {
+        display: none;
+    }
+
+    /* Reducimos ligeramente el tamaño de las burbujas gigantes de las esquinas */
+    .circulo-grande-1 {
+        width: 280px;
+        height: 280px;
+        top: -80px;
+        left: -80px;
+    }
+
+    .circulo-grande-2 {
+        width: 320px;
+        height: 320px;
+        bottom: -100px;
+        right: -80px;
+    }
+}
+
+/* Pantallas pequeñas (Celulares: 480px o menos) */
+@media (max-width: 480px) {
+    /* En móviles dejamos solo los círculos esenciales */
+    .mediano-1, 
+    .mediano-3, 
+    .mediano-4 {
+        display: none;
+    }
+
+    .pequeno-1, 
+    .pequeno-3, 
+    .pequeno-4, 
+    .pequeno-5 {
+        display: none;
+    }
+
+    /* Reducimos aún más las esquinas para que no tapen el formulario ni el logo */
+    .circulo-grande-1 {
+        width: 200px;
+        height: 200px;
+        top: -60px;
+        left: -60px;
+    }
+
+    .circulo-grande-2 {
+        width: 230px;
+        height: 230px;
+        bottom: -70px;
+        right: -60px;
+    }
+
+    /* Ajuste de márgenes del contenedor para móviles */
+    .login-container {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    /* Ajuste del tamaño del logo en celular */
+    .logo {
+        width: 70px;
+        height: 70px;
+        top: 15px;
+        left: 15px;
+    }
+}
