@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Carpintería</title>
+    <!-- Vinculación del archivo CSS externo -->
+    <link rel="stylesheet" href="../css/login_style.css">
+</head>
+<body>
+
+    <!-- Logo de la página -->
+    <img src="../assets/logo_campinteria.jpeg" alt="Logo oficial de Carpintería" class="logo">
+
+    <!-- Elementos decorativos (círculos de fondo) -->
+    <div class="circulo-contenido circulo-grande-1"></div> <!--izquierda superior de la pantalla-->
+    <div class="circulo-contenido circulo-grande-2"></div> <!--derecha inferior de la pantalla-->
+    <div class="circulo-contenido circulo-mediano mediano-1"></div> <!--distribudos en culaquierparte de la pantalla--> 
+    <div class="circulo-contenido circulo-mediano mediano-2"></div> 
+    <div class="circulo-contenido circulo-mediano mediano-3"></div>
+    <div class="circulo-contenido circulo-mediano mediano-4"></div>
+    <div class="circulo-contenido circulo-mediano mediano-5"></div>
+    <div class="circulo-contenido circulo-mediano mediano-6"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-1"></div> <!--tambien se distribudos en culaquierparte de la pantalla-->
+    <div class="circulo-contenido circulo-pequeno pequeno-2"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-3"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-4"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-5"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-6"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-7"></div>
+
+    <!-- Contenedor principal del formulario -->
+    <main class="login-container">
+        <form action="#" method="POST" id="formulario" name="formulario" class="formulario-login">
+
+            <!-- Ícono de usuario superior en halo circular -->
+            <div class="avatar-container">
+                <div class="avatar-ring">
+                    <svg class="avatar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+            </div>
+
+            <h1 class="titulo-form">Iniciar Sesión</h1>
+        
+            <a href="#" class="enlace-secundario">¿No tienes una cuenta?</a>
+            
+            <div class="grupo-input">
+                <label for="email" class="label-form">Correo electrónico</label>
+                <input type="email" id="email" name="email" class="input-form" placeholder="ejemplo@correo.com" required autocomplete="email">
+            </div>
+
+            <div class="grupo-input">
+                <label for="password" class="label-form">Contraseña</label>
+                <input type="password" id="password" name="password" class="input-form" placeholder="Ingresa tu contraseña" required>
+            </div>
+
+            <div class="acciones-form">
+                <a href="#" class="enlace-olvido">¿Se te olvidó tu contraseña?</a>
+            </div>
+
+            <button type="submit" id="acceder" name="acceder" class="btn-submit">
+                Acceder
+            </button>
+        </form>
+    </main>
+
+</body>
+</html>
