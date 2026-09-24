@@ -1,3 +1,17 @@
+
+
+
+
+
+
+
+
+
+
+/*=================================================
+logica de botones de registro cliente administrador 
+===================================================*/
+
 function seleccionarRol(rol) {
   const btnCliente = document.getElementById('btn-cliente');
   const btnAdmin = document.getElementById('btn-admin');
