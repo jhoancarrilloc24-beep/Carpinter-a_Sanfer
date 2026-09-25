@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="../css/request_reset_style.css">
+</head>
+<body>
+
+    <!-- Logo de la página -->
+    <img src="../assets/logo_campinteria.jpeg" alt="Logo oficial de Carpintería" class="logo">
+
+    <!-- Círculos decorativos de fondo -->
+    <div class="circulo-contenido circulo-grande-1"></div>
+    <div class="circulo-contenido circulo-grande-2"></div>
+    <div class="circulo-contenido circulo-mediano mediano-1"></div>
+    <div class="circulo-contenido circulo-mediano mediano-2"></div>
+    <div class="circulo-contenido circulo-mediano mediano-3"></div>
+    <div class="circulo-contenido circulo-mediano mediano-4"></div>
+    <div class="circulo-contenido circulo-mediano mediano-5"></div>
+    <div class="circulo-contenido circulo-mediano mediano-6"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-1"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-2"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-3"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-4"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-5"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-6"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-7"></div>
+
+    <!-- Contenedor principal del formulario -->
+    <main class="password-container">
+        <form action="#" method="POST" id="formulario" name="formulario" class="formulario-login">
+
+            <!-- Ícono superior en halo circular -->
+            <div class="avatar-container">
+                <div class="avatar-ring">
+                    <svg class="avatar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Título y subtítulo -->
+            <h1 class="H1">Recuperar contraseña</h1>
+            <p class="Parrafo">ingresa tu correo electrónico registrado y te enviaremos un código para restablecer tu contraseña</p>
+
+            <!-- Campo e input -->
+            <div class="input-group">
+                <label for="email" class="label-form">ingresa correo</label>
+                <input type="email" id="email" name="email" class="input-form" placeholder="ejm: usuario123@gmail.com">
+            </div>
+
+            <!-- Botón de acción -->
+            <button type="submit" id="Restablecer" name="Restablecer" class="btn-submit">Restablecer</button>
+
+        </form>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer-note">
+        &copy; <span id="year"></span> Carpintería Sanfer — Todos los derechos reservados
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,20 +1,20 @@
-/* --- CONFIGURACIÓN GENERAL --- */
+/* --- CONFIGURACIÓN GENERAL DE LA PÁGINA --- */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', 'Segoe UI', sans-serif;
 }
 
 body {
     min-height: 100vh;
-    width: 100%;
-    background-color: #ffffff;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /* --- LOGO --- */
@@ -30,14 +30,12 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* --- ESTILOS DE LOS CÍRCULOS DE FONDO (GRADIENTES DILUIDOS) --- */
-/* --- ESTILOS DE LOS CÍRCULOS DE FONDO (MÁS NARANJAS Y VISIBLES) --- */
+/* --- ESTILOS DE LOS CÍRCULOS DE FONDO (COLORES MANTENIDOS) --- */
 .circulo-contenido {
     position: absolute;
     border-radius: 50%;
-    /* Se cambia el tono a un naranja cálido brillante con mayor presencia/opacidad */
     background: radial-gradient(circle, rgba(245, 158, 11, 0.95) 0%, rgba(234, 88, 12, 0.75) 70%, rgba(245, 158, 11, 0.2) 100%);
-    filter: drop-shadow(0px 4px 10px rgba(234, 88, 12, 0.25)); /* Sombra suave opcional para realzar */
+    filter: drop-shadow(0px 4px 10px rgba(234, 88, 12, 0.25));
     pointer-events: none;
     z-index: 1;
 }
@@ -76,11 +74,11 @@ body {
 
 
 /* --- CONTENEDOR Y FORMULARIO --- */
-.login-container {
+.password-container {
     position: relative;
     z-index: 5;
     width: 100%;
-    max-width: 420px;
+    max-width: 650px;
     padding: 20px;
 }
 
@@ -89,6 +87,7 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
+    text-align: center;
 }
 
 /* AVATAR CON HALO CIRCULAR */
@@ -115,46 +114,42 @@ body {
     color: #000000;
 }
 
-/* --- TÍTULO --- */
-.titulo-form {
-    font-size: 1.8rem;
+/* TEXTOS DEL FORMULARIO */
+.H1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.2rem;
     font-weight: 800;
     color: #000000;
     margin-bottom: 25px;
+}
+
+.Parrafo {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000000;
+    max-width: 520px;
+    line-height: 1.4;
+    margin-bottom: 35px;
     text-align: center;
 }
 
-/* --- GRUPOS DE INPUT Y LABELS --- */
-.grupo-input {
-    width: 100%;
-    margin-bottom: 18px;
+/* CAMPO DE ENTRADA Y ETIQUETA */
+.input-group {
     display: flex;
     flex-direction: column;
-    position: relative;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 25px;
 }
 
 .label-form {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #1a1a1a;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000000;
     margin-bottom: 6px;
-    font-family: 'Georgia', serif; /* Estilo clásico similar al diseño */
-}
-
-/* Estilo para colocar "¿No tienes una cuenta?" al lado del Label de Correo */
-.formulario-login {
-    position: relative;
-}
-
-.enlace-secundario {
-    position: absolute;
-    top: 154px;
-    right: 0;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #ea580c;
-    text-decoration: none;
-    z-index: 6;
 }
 
 .input-form {
@@ -178,27 +173,7 @@ body {
     border-color: #b86b32;
 }
 
-/* --- ENLACE OLVIDO CONTRASEÑA --- */
-.acciones-form {
-    width: 100%;
-    text-align: left;
-    margin-top: -5px;
-    margin-bottom: 25px;
-}
-
-.enlace-olvido {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #ea580c;
-    text-decoration: none;
-}
-
-.enlace-secundario:hover,
-.enlace-olvido:hover {
-    text-decoration: underline;
-}
-
-/* --- BOTÓN DE SUBMIT --- */
+/* BOTÓN DE ACCIÓN (Manteniendo tonos marrones/cálidos) */
 .btn-submit {
     margin-top: 15px;
     width: 140px;
@@ -223,35 +198,23 @@ body {
     transform: scale(0.98);
 }
 
-
+/* PIE DE PÁGINA */
 .footer-note {
+    position: relative;
+    z-index: 5;
     margin-top: 25px;
     font-family: sans-serif;
     font-size: 0.75rem;
     color: #3a3735;
 }
 
-/* ===================================================
-   ADAPTABILIDAD PARA MÓVILES Y PANTALLAS PEQUEÑAS
-   =================================================== */
-
-/* Pantallas medianas (Tablets: 768px o menos) */
+/* --- ADAPTABILIDAD RESPONSIVE --- */
 @media (max-width: 768px) {
-    /* Ocultamos los círculos medianos secundarios para limpiar espacio */
-    .mediano-2, 
-    .mediano-5, 
-    .mediano-6 {
+    .mediano-2, .mediano-5, .mediano-6,
+    .pequeno-2, .pequeno-6, .pequeno-7 {
         display: none;
     }
 
-    /* Ocultamos algunos círculos pequeños */
-    .pequeno-2, 
-    .pequeno-6, 
-    .pequeno-7 {
-        display: none;
-    }
-
-    /* Reducimos ligeramente el tamaño de las burbujas gigantes de las esquinas */
     .circulo-grande-1 {
         width: 280px;
         height: 280px;
@@ -267,24 +230,12 @@ body {
     }
 }
 
-
-/* Pantallas pequeñas (Celulares: 480px o menos) */
 @media (max-width: 480px) {
-    /* En móviles dejamos solo los círculos esenciales */
-    .mediano-1, 
-    .mediano-3, 
-    .mediano-4 {
+    .mediano-1, .mediano-3, .mediano-4,
+    .pequeno-1, .pequeno-3, .pequeno-4, .pequeno-5 {
         display: none;
     }
 
-    .pequeno-1, 
-    .pequeno-3, 
-    .pequeno-4, 
-    .pequeno-5 {
-        display: none;
-    }
-
-    /* Reducimos aún más las esquinas para que no tapen el formulario ni el logo */
     .circulo-grande-1 {
         width: 200px;
         height: 200px;
@@ -299,17 +250,19 @@ body {
         right: -60px;
     }
 
-    /* Ajuste de márgenes del contenedor para móviles */
-    .login-container {
+    .password-container {
         padding: 15px;
-        max-width: 90%;
+        max-width: 95%;
     }
 
-    /* Ajuste del tamaño del logo en celular */
     .logo {
         width: 70px;
         height: 70px;
         top: 15px;
         left: 15px;
+    }
+
+    .H1 {
+        font-size: 1.7rem;
     }
 }
