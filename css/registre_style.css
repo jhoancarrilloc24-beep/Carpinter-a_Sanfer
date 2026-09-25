@@ -288,7 +288,12 @@ body {
 
 
 
-
+.footer-note {
+    margin-top: 25px;
+    font-family: sans-serif;
+    font-size: 0.75rem;
+    color: #3a3735;
+}
 
 
 

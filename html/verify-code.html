@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código de verificación - Carpintería Sanfer</title>
+    <!-- Vinculación del archivo CSS externo -->
+    <link rel="stylesheet" href="../css/verify-code_style.css">
+</head>
+<body>
+
+    <!-- Logo de la página -->
+    <img src="../assets/logo_campinteria.jpeg" alt="Logo oficial de Carpintería" class="logo">
+
+    <!-- Elementos decorativos (círculos de fondo) -->
+    <div class="circulo-contenido circulo-grande-1"></div>
+    <div class="circulo-contenido circulo-grande-2"></div>
+    <div class="circulo-contenido circulo-mediano mediano-1"></div> 
+    <div class="circulo-contenido circulo-mediano mediano-2"></div> 
+    <div class="circulo-contenido circulo-mediano mediano-3"></div>
+    <div class="circulo-contenido circulo-mediano mediano-4"></div>
+    <div class="circulo-contenido circulo-mediano mediano-5"></div>
+    <div class="circulo-contenido circulo-mediano mediano-6"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-1"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-2"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-3"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-4"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-5"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-6"></div>
+    <div class="circulo-contenido circulo-pequeno pequeno-7"></div>
+
+    <main class="register_container">
+
+        <form id="formulario_verificacion" name="formulario_verificacion" class="formulario_registro">
+            
+            <!-- Ícono de usuario superior en halo circular -->
+            <div class="avatar-container">
+                <div class="avatar-ring">
+                    <svg class="avatar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Título -->
+            <h1 class="titulo-form">Ingresa el código de restauración</h1>
+
+            <!-- Contenedor del Código OTP (3 números - guion - 3 números) -->
+            <div class="otp-container">
+                <!-- Primer grupo de 3 dígitos -->
+                <div class="otp-group">
+                    <input type="text" maxlength="1" class="otp-input" inputmode="numeric" pattern="[0-9]*" required autocomplete="off">
+                    <input type="text" maxlength="1" class="otp-input" inputmode="numeric" pattern="[0-9]*" required autocomplete="off">
+                    <input type="text" maxlength="1" class="otp-input" inputmode="numeric" pattern="[0-9]*" required autocomplete="off">
+                </div>
+                
+                <!-- Separador guión central -->
+                <span class="otp-separator"></span>
+                
+                <!-- Segundo grupo de 3 dígitos -->
+                <div class="otp-group">
+                    <input type="text" maxlength="1" class="otp-input" inputmode="numeric" pattern="[0-9]*" required autocomplete="off">
+                    <input type="text" maxlength="1" class="otp-input" inputmode="numeric" pattern="[0-9]*" required autocomplete="off">
+                    <input type="text" maxlength="1" class="otp-input" inputmode="numeric" pattern="[0-9]*" required autocomplete="off">
+                </div>
+            </div>
+            
+            <!-- Botón de acción -->
+            <button type="submit" class="btn-submit">Restaurar</button>
+
+            <!-- Opción de reenviar código -->
+            <div class="resend-container">
+                ¿No recibiste el código? 
+                <button type="button" onclick="resendCode()" id="resendBtn" class="btn-resend">
+                    Reenviar código
+                </button>
+                <span id="timerText" class="timer-text" style="display: none;"></span>
+            </div>
+
+            <!-- Pie de página -->
+            <footer class="footer-note">
+                &copy; <span id="year"></span> Carpintería Sanfer — Todos los derechos reservados
+            </footer>
+
+        </form>
+    </main>
+
+
+
+    
+    <!-- Script para auto-cambio de casilla al escribir los números -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('.otp-input');
+            const yearSpan = document.getElementById('year');
+            
+            if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+            inputs.forEach((input, index) => {
+                // Mover foco al siguiente input al escribir
+                input.addEventListener('input', (e) => {
+                    if (e.target.value.length === 1 && index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                });
+
+                // Retroceder al borrar con Backspace
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && !e.target.value && index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                });
+            });
+        });
+
+        function resendCode() {
+            alert("✅ Se ha reenviado un nuevo código a tu correo.");
+        }
+    </script>
+</body>
+</html>
