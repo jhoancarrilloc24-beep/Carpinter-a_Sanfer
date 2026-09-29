@@ -154,23 +154,21 @@ body {
 
 .input-form {
     width: 100%;
-    padding: 10px 18px;
-    font-size: 0.9rem;
-    border: 1px solid #707070;
-    border-radius: 25px;
-    outline: none;
-    background-color: transparent;
+    height: 48px;
+    padding: 0 45px 0 20px;
+    border: 1px solid #000000;
+    border-radius: 25px; /* Píldora redondeada según Figma */
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 0.95rem;
     color: #333333;
-    transition: border-color 0.3s ease;
-}
-
-.input-form::placeholder {
-    color: #a0a0a0;
-    font-weight: 300;
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .input-form:focus {
-    border-color: #b86b32;
+    border-color: #ea580c;
+    box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
 }
 
 /* BOTÓN DE ACCIÓN (Manteniendo tonos marrones/cálidos) */

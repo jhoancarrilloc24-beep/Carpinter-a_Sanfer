@@ -173,6 +173,61 @@ body {
 }
 
 
+
+/*===================================
+boton campo ojo
+=====================================*/
+/* Contenedor relativo para posicionar el ícono sobre el campo */
+.input-password-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Espaciado a la derecha del input para evitar que el texto quede debajo del ojo */
+.input-form {
+    padding-right: 45px;
+}
+
+/* Estilos del botón transparente que contiene el ojo */
+.btn-toggle-password {
+    position: absolute;
+    right: 15px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    color: #000000;
+    opacity: 0.75;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.btn-toggle-password:hover {
+    opacity: 1;
+}
+
+.btn-toggle-password:active {
+    transform: scale(0.92);
+}
+
+/* Tamaño y comportamiento del ícono SVG */
+.eye-icon {
+    width: 22px;
+    height: 22px;
+    pointer-events: none;
+}
+
+.footer-note {
+    margin-top: 25px;
+    font-family: sans-serif;
+    font-size: 0.75rem;
+    color: #3a3735;
+}
+
 /* --- CONTENEDOR PRINCIPAL DE LA BARRA --- */
 .selector-rol {
   display: flex;

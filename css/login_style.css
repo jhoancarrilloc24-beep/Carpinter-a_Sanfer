@@ -159,23 +159,21 @@ body {
 
 .input-form {
     width: 100%;
-    padding: 10px 18px;
-    font-size: 0.9rem;
-    border: 1px solid #707070;
-    border-radius: 25px;
-    outline: none;
-    background-color: transparent;
+    height: 48px;
+    padding: 0 45px 0 20px;
+    border: 1px solid #000000;
+    border-radius: 25px; /* Píldora redondeada según Figma */
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 0.95rem;
     color: #333333;
-    transition: border-color 0.3s ease;
-}
-
-.input-form::placeholder {
-    color: #a0a0a0;
-    font-weight: 300;
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .input-form:focus {
-    border-color: #b86b32;
+    border-color: #ea580c;
+    box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
 }
 
 /* --- ENLACE OLVIDO CONTRASEÑA --- */
@@ -223,6 +221,53 @@ body {
     transform: scale(0.98);
 }
 
+
+/*===================================
+boton campo ojo
+=====================================*/
+/* Contenedor relativo para posicionar el ícono sobre el campo */
+.input-password-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Espaciado a la derecha del input para evitar que el texto quede debajo del ojo */
+.input-form {
+    padding-right: 45px;
+}
+
+/* Estilos del botón transparente que contiene el ojo */
+.btn-toggle-password {
+    position: absolute;
+    right: 15px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    color: #000000;
+    opacity: 0.75;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.btn-toggle-password:hover {
+    opacity: 1;
+}
+
+.btn-toggle-password:active {
+    transform: scale(0.92);
+}
+
+/* Tamaño y comportamiento del ícono SVG */
+.eye-icon {
+    width: 22px;
+    height: 22px;
+    pointer-events: none;
+}
 
 .footer-note {
     margin-top: 25px;
