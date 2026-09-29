@@ -3,160 +3,329 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carpintería Sanfer</title>
-  <link rel="stylesheet" href="/css/styles.css">
+  <title>Carpintería Sanfer | Muebles a la Medida y Artesanía</title>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
-  
-
-  <!-- NAVEGACIÓN / HEADER ESTA ES LA BARRA DEL INICO  -->
+  <!-- Header / Barra de Navegación -->
   <header class="navbar">
-    <div class="logo">
-      <img src="logo.png" alt="Carpintería Sanfer Logo">
+    <div class="logo-container">
+      <img src="logo-sanfer.jpeg" alt="Carpintería Sanfer" class="logo-img">
+      <span class="brand-name">Carpintería Sanfer</span>
     </div>
+
     <nav class="nav-links">
-      <a href="#productos">RE: productos</a>
-      <a href="#servicios">servicios</a>
-      <a href="#contacto">contacto</a>
+      <a href="index.html" class="active">Inicio</a>
+      <a href="#catalogo">Tienda</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#noticias">Noticias</a>
+      <a href="#contacto">Contacto</a>
     </nav>
-    <div class="nav-actions">
-      <a href="#carrito" class="icon-cart">🛒</a>
-      <a href="#usuario" class="user-link">👤 usuario</a>
+
+    <div class="header-actions">
+      <div class="cart-wrapper">
+        <button class="icon-btn cart-toggle" type="button" aria-label="Ver carrito, 0 productos" aria-expanded="false" aria-controls="cart-dropdown">
+          🛒 <span class="badge cart-badge">0</span>
+        </button>
+        <div class="cart-dropdown" id="cart-dropdown" aria-label="Contenido del carrito" hidden>
+          <div class="cart-items" aria-live="polite">
+            <p class="cart-empty">Tu carrito está vacío.</p>
+          </div>
+          <div class="cart-subtotal" hidden></div>
+        </div>
+      </div>
+      <button class="icon-btn" title="Mi Cuenta">👤</button>
     </div>
   </header>
 
-  <main>
-    <!--EL LOGOTIPO (MENSAJE DE LA PAGINA) -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Carpintería Sanfer: Calidad en Cada Detalle</h1>
-        <p>estrena los mejores muebles</p>
-        <button class="btn-primary">informacion</button>
+  <!-- Hero Banner Principal -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-subtitle">Muebles de Roble & Artesanía Superior</span>
+      <h1 class="hero-title">Carpintería Sanfer: Calidad en Cada Detalle</h1>
+      <p class="hero-description">Encuentra y diseña los mejores muebles hechos a la medida para darle vida y elegancia a tu hogar.</p>
+      <div class="hero-buttons">
+        <a href="#catalogo" class="btn btn-primary">Ver catálogo</a>
+        <a href="#cotizar" class="btn btn-secondary">Cotizar Proyecto</a>
       </div>
-    </section>
- 
-    <!-- BARRA DE CATEGORÍAS / FILTROS LA BARRA QUE NO S PIDIO EL PROFESOR-->
-    <section class="categories-bar">
-      <button class="cat-btn active">repisas</button>
-      <button class="cat-btn">escritorios</button>
-      <button class="cat-btn">peinadoras</button>
-      <button class="cat-btn">closest</button>
-      <button class="cat-btn">nocheros</button>
-    </section>
-
-    <!-- CATÁLOGO DE PRODUCTOS -->
-     <!-- POR MEJORAR ESTO TIENE QUE SER AGRGADOS POR LOS ABMINISTRADORES -->
-    <section class="product-grid" id="productos">
       
-      <!-- Producto 1 -->
-      <article class="product-card">
-        <img src="repisa.jpg" alt="Repisas calidad premium">
-        <span class="category-tag">repisas</span>
-        <h3>calidad premium</h3>
-        <a href="#" class="more-info">más información</a>
-        <p class="price">$200</p>
-        <button class="btn-add">agregar</button>
-      </article>
+      <!-- Badges de valor rápido -->
+      <div class="hero-features">
+        <div class="feature-item">✨ Madera 100% Certificada</div>
+        <div class="feature-item">🚚 Envíos Nacionales</div>
+        <div class="feature-item">🛡️ Garantía de 3 Años</div>
+      </div>
+    </div>
+  </section>
 
-      <!-- Producto 2 -->
-      <article class="product-card">
-        <img src="repisa.jpg" alt="Repisas calidad premium">
-        <span class="category-tag">repisas</span>
-        <h3>calidad premium</h3>
-        <a href="#" class="more-info">más información</a>
-        <p class="price">$200</p>
-        <button class="btn-add">agregar</button>
-      </article>
+  <main class="main-container">
 
-      <!-- Producto 3 -->
-      <article class="product-card">
-        <img src="repisa.jpg" alt="Repisas calidad premium">
-        <span class="category-tag">repisas</span>
-        <h3>calidad premium</h3>
-        <a href="#" class="more-info">más información</a>
-        <p class="price">$200</p>
-        <button class="btn-add">agregar</button>
-      </article>
+    <!-- Sección de Categorías / Catálogo -->
+    <section id="catalogo" class="section-padding">
+      <div class="section-header">
+        <h2>Nuestro Catálogo de Productos</h2>
+        <p>Explora nuestras piezas exclusivas diseñadas con materiales de la más alta calidad.</p>
+      </div>
 
-      <!-- Duplicar cards según la grilla del catálogo -->
-    </section>
+      <!-- Filtros de Categorías -->
+      <div class="category-filters">
+        <button class="filter-btn active">Todos</button>
+        <button class="filter-btn">Sillas y Banquetas</button>
+        <button class="filter-btn">Mesas de Comedor</button>
+        <button class="filter-btn">Escritorios</button>
+        <button class="filter-btn">Estanterías</button>
+      </div>
 
-    <!-- SECCIÓN DE PROMOCIONES BANNER -->
-    <section class="promo-section">
-      <h2>las mejores promociones</h2>
-      <div class="banner">
-        <img src="banner-promocion.jpg" alt="Promoción Exclusiva Carpintería Sanfer">
+      <!-- Grid de Productos -->
+      <div class="products-grid">
+
+        <!-- Producto 1 -->
+        <article class="product-card">
+          <div class="product-image-container">
+            <img src="https://images.unsplash.com/photo-1580481072645-022f9a6d1205?auto=format&fit=crop&w=600&q=80" alt="Silla Ergonomica Premium" class="product-img">
+            <span class="tag tag-discount">-20%</span>
+          </div>
+          <div class="product-details">
+            <span class="product-category">SILLAS Y BANQUETAS</span>
+            <h3 class="product-title">Silla Ergonómica Premium</h3>
+            <div class="product-rating">★★★★★ <span>(4.9)</span></div>
+            <div class="product-price-box">
+              <span class="current-price">$ 240.000 COP</span>
+              <span class="old-price">$ 300.000 COP</span>
+            </div>
+            <button class="btn btn-card" type="button" data-cart-add data-price="240000" data-currency="COP">Añadir al Carrito</button>
+          </div>
+        </article>
+
+        <!-- Producto 2 -->
+        <article class="product-card">
+          <div class="product-image-container">
+            <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=600&q=80" alt="Mesa de Centro Moderna" class="product-img">
+          </div>
+          <div class="product-details">
+            <span class="product-category">MESAS DE COMEDOR</span>
+            <h3 class="product-title">Mesa de Centro Moderna</h3>
+            <div class="product-rating">★★★★☆ <span>(4.7)</span></div>
+            <div class="product-price-box">
+              <span class="current-price">$ 450.000 COP</span>
+            </div>
+            <button class="btn btn-card" type="button" data-cart-add data-price="450000" data-currency="COP">Añadir al Carrito</button>
+          </div>
+        </article>
+
+        <!-- Producto 3 -->
+        <article class="product-card">
+          <div class="product-image-container">
+            <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=600&q=80" alt="Escritorio Roble Clásico" class="product-img">
+            <span class="tag tag-new">Nuevo</span>
+          </div>
+          <div class="product-details">
+            <span class="product-category">ESCRITORIOS</span>
+            <h3 class="product-title">Escritorio Roble Clásico</h3>
+            <div class="product-rating">★★★★★ <span>(5.0)</span></div>
+            <div class="product-price-box">
+              <span class="current-price">$ 580.000 COP</span>
+            </div>
+            <button class="btn btn-card" type="button" data-cart-add data-price="580000" data-currency="COP">Añadir al Carrito</button>
+          </div>
+        </article>
+
+        <!-- Producto 4 -->
+        <article class="product-card">
+          <div class="product-image-container">
+            <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=600&q=80" alt="Estantería Minimalista" class="product-img">
+          </div>
+          <div class="product-details">
+            <span class="product-category">ESTANTERÍAS</span>
+            <h3 class="product-title">Estantería Flotante Trio</h3>
+            <div class="product-rating">★★★★★ <span>(4.8)</span></div>
+            <div class="product-price-box">
+              <span class="current-price">$ 180.000 COP</span>
+            </div>
+            <button class="btn btn-card" type="button" data-cart-add data-price="180000" data-currency="COP">Añadir al Carrito</button>
+          </div>
+        </article>
+
       </div>
     </section>
 
-    <!-- SECCIÓN BLOG / NOTICIAS TODO LO NUEVO DE LA PAGINA Y NOTICAS MAS RELEVANTES 
-     COMO LAS OFECTAS O NUEVOS PRODUCTOS-->
-    <section class="blog-grid">
-      <article class="blog-card">
-        <img src="taller.jpg" alt="Taller de carpintería">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        <a href="#" class="read-more">Leer Más...</a>
-      </article>
-
-      <article class="blog-card">
-        <img src="taller.jpg" alt="Taller de carpintería">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        <a href="#" class="read-more">Leer Más...</a>
-      </article>
-
-      <article class="blog-card">
-        <img src="taller.jpg" alt="Taller de carpintería">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        <a href="#" class="read-more">Leer Más...</a>
-      </article>
+    <!-- Banner Promocional Destacado -->
+    <section class="promo-banner">
+      <div class="promo-content">
+        <h2>Tus mejores promociones de la temporada</h2>
+        <p>Aprovecha hasta un <strong>30% de descuento</strong> en proyectos diseñados a medida para tu sala o comedor.</p>
+        <a href="#contacto" class="btn btn-promo">Ver ofertas especiales</a>
+      </div>
     </section>
+
+    <!-- Sección de Servicios Especializados -->
+    <section id="servicios" class="section-padding">
+      <div class="section-header">
+        <h2>Nuestros Servicios Especializados</h2>
+        <p>Creamos soluciones únicas adaptadas exactamente al espacio que necesitas.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📐</div>
+          <h3>Diseño 3D a Medida</h3>
+          <p>Visualiza tus muebles en render 3D antes de fabricarlos para asegurar que encajen perfectamente en tu hogar.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🪚</div>
+          <h3>Fabricación Artesanal</h3>
+          <p>Muebles elaborados por carpinteros expertos con maderas seleccionadas y acabados duraderos.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">✨</div>
+          <h3>Restauración y Laqueado</h3>
+          <p>Restauramos tus muebles antiguos dándoles una segunda vida con acabados modernos en barniz o laca mate.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Por Qué Elegirnos -->
+    <section class="why-us-section">
+      <div class="why-us-container">
+        <div class="why-us-text">
+          <h2>¿Por qué confiar en Carpintería Sanfer?</h2>
+          <p>Llevamos años transformando espacios con muebles de alta durabilidad, diseños vanguardistas y la calidez que solo la madera auténtica puede transmitir.</p>
+          
+          <ul class="why-us-list">
+            <li>✔ Materiales de primera calidad (Roble, Cedro, Teca, MDF RH).</li>
+            <li>✔ Asesoría personalizada en interiores sin costo adicional.</li>
+            <li>✔ Tiempos de entrega garantizados y servicio postventa.</li>
+          </ul>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-number">30+</span>
+            <span class="stat-label">Años de Experiencia</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">1,500+</span>
+            <span class="stat-label">Proyectos Entregados</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Clientes Satisfechos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Noticias / Blog -->
+    <section id="noticias" class="section-padding">
+      <div class="section-header">
+        <h2>Nuestras Noticias e Inspiración</h2>
+        <p>Proyectos, consejos de cuidado y las últimas tendencias en muebles a medida.</p>
+      </div>
+
+      <div class="news-grid">
+        <!-- Noticia 1 -->
+        <article class="news-card">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80" alt="Elegir tono de madera" class="news-img">
+          <div class="news-content">
+            <span class="news-date">12 Sep 2026</span>
+            <h3>Cómo elegir el tono de madera perfecto para tu sala</h3>
+            <p>Descubre cómo combinar acabados claros y oscuros según la iluminación de tu hogar.</p>
+            <a href="#" class="read-more">Leer más →</a>
+          </div>
+        </article>
+
+        <!-- Noticia 2 -->
+        <article class="news-card">
+          <img src="https://images.unsplash.com/photo-1540518614846-7ede433c5172?auto=format&fit=crop&w=600&q=80" alt="Mantenimiento de roble" class="news-img">
+          <div class="news-content">
+            <span class="news-date">05 Sep 2026</span>
+            <h3>Mantenimiento básico para muebles de roble</h3>
+            <p>Guía de cuidados para mantener el brillo y protección natural de la madera por décadas.</p>
+            <a href="#" class="read-more">Leer más →</a>
+          </div>
+        </article>
+
+        <!-- Noticia 3 -->
+        <article class="news-card">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80" alt="Tendencias de diseño" class="news-img">
+          <div class="news-content">
+            <span class="news-date">28 Ago 2026</span>
+            <h3>Tendencias de diseño de interiores para este año</h3>
+            <p>Líneas minimalistas, tonos cálidos y mobiliario funcional lideran las preferencias.</p>
+            <a href="#" class="read-more">Leer más →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Banner de Cotización Personalizada / CTA final -->
+    <section id="cotizar" class="cta-section">
+      <h2>¿Tienes una idea en mente?</h2>
+      <p>Envíanos tus medidas o referente y te enviamos un presupuesto personalizado sin compromiso.</p>
+      <a href="https://wa.me/573000000000" target="_blank" class="btn btn-whatsapp">💬 Cotizar por WhatsApp</a>
+    </section>
+
   </main>
 
-  <!--PIE DE PÁGINA XD-->
-  <footer class="footer">
-    <div class="footer-col">
-      <h4>Empresa</h4>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Nosotros</a></li>
-        <li><a href="#">Servicios</a></li>
-        <li><a href="#">Contacto</a></li>
-      </ul>
+  <!-- Footer Completo -->
+  <footer id="contacto" class="footer">
+    <div class="footer-container">
+      
+      <!-- Columna 1: Empresa -->
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img src="logo-sanfer.jpeg" alt="Logo Sanfer" class="footer-logo">
+          <h3>Carpintería Sanfer</h3>
+        </div>
+        <p class="footer-desc">Diseño y fabricación de muebles en madera de alta calidad. Transformando hogares con calidez y estilo.</p>
+      </div>
+
+      <!-- Columna 2: Enlaces Rápidos -->
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#catalogo">Tienda</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#noticias">Noticias</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Atención al Cliente -->
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#">Atención a Clientes</a></li>
+          <li><a href="#">Diseño Personalizado</a></li>
+          <li><a href="#">Envíos e Instalación</a></li>
+          <li><a href="#">Preguntas Frecuentes</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Contacto -->
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p>📧 contacto@sanfer.com</p>
+        <p>📞 +57 (300) 123-4567</p>
+        <p>📍 Cúcuta, Norte de Santander</p>
+        
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Twitter">Twitter</a>
+        </div>
+      </div>
+
     </div>
 
-    <div class="footer-col">
-      <h4>Servicios</h4>
-      <ul>
-        <li><a href="#">Muebles a medida</a></li>
-        <li><a href="#">Puertas de madera</a></li>
-        <li><a href="#">Closets</a></li>
-        <li><a href="#">Restauracion</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Contacto</h4>
-      <p>calle principal #123</p>
-      <p>+34 600 123 456</p>
-      <p>contacto@carpinteria.com</p>
-    </div>
-
-    <div class="footer-col">
-      <h4>Siguenos</h4>
-      <ul>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Tiktok</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Whatsapp</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>© 2026 Carpintería Sanfer. Todos los derechos reservados.</p>
     </div>
   </footer>
-  
-  <!-- Pie de página -->
-  <footer class="footer-note">
-    &copy; <span id="year"></span> Carpintería Sanfer — Todos los derechos reservados
-  </footer>
 
+  <script src="carrito.js"></script>
 </body>
 </html>
