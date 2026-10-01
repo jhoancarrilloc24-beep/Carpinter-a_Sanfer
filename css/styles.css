@@ -43,13 +43,13 @@ body {
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
 .logo-img {
-  height: 42px;
+  height: 56px;
   width: auto;
-  border-radius: 4px;
+  border-radius: 36px;
 }
 
 .brand-name {
@@ -665,9 +665,9 @@ body {
 }
 
 .footer-logo {
-  height: 36px;
+  height: 65px;
   width: auto;
-  filter: brightness(0) invert(1);
+  border-radius: 36px;
 }
 
 .footer-brand h3 {
