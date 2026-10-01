@@ -63,6 +63,10 @@ body {
   gap: 24px;
 }
 
+.mobile-menu-toggle {
+  display: none;
+}
+
 .nav-links a {
   color: #d1c7bd;
   text-decoration: none;
@@ -737,6 +741,28 @@ body {
   }
   .nav-links {
     display: none; /* Se puede alternar con un menú hamburguesa */
+  }
+  .mobile-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+  }
+  .navbar.menu-open .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 20px;
+    background: var(--bg-dark);
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.18);
+  }
+  .navbar.menu-open .nav-links a {
+    padding: 12px 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
   .hero-title {
     font-size: 1.8rem;
