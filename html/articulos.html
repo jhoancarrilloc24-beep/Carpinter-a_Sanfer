@@ -1,0 +1,29 @@
+
+<!-- SECCIÓN: ESTRUCTURA GENERAL -->
+<!-- ========================================= -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artículos | Carpintería Sanfer</title>
+    <link rel="stylesheet" href="../css/styles.css"><link rel="stylesheet" href="../css/gestor_inventarios.css"><link rel="stylesheet" href="../css/modules.css"><link rel="stylesheet" href="../css/articulos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="app-container">
+    <aside class="sidebar"><div class="sidebar-logo"><span class="logo-mark"><i class="fa-solid fa-hammer"></i></span><span class="logo-text">Carpintería<br><strong>Sanfer</strong></span></div><ul class="sidebar-menu">
+        <li><a class="active" href="articulos.html"><i class="fa-solid fa-box"></i> Artículos</a></li><li><a href="categorias.html"><i class="fa-solid fa-tags"></i> Categorías</a></li><li><a href="proveedores.html"><i class="fa-solid fa-truck-field"></i> Proveedores</a></li><li><a href="alertas_stock.html"><i class="fa-solid fa-bell"></i> Alertas de stock</a></li><li><a href="configuracion.html"><i class="fa-solid fa-gear"></i> Configuración</a></li>
+    </ul></aside>
+    <main class="main-content"><header class="top-navbar"><span class="view-title">Gestor de inventarios</span><nav class="top-menu" aria-label="Navegación principal"><a href="inicio.html">Inicio</a><a href="registro_productos.html">Registro de productos</a><a href="index.html">Gestor de inventarios</a><a href="ventas_pedidos.html">Ventas/Pedidos</a><a href="informes.html">Informes</a></nav><div class="top-actions"><button class="btn-logout" data-logout type="button" title="Cerrar sesión" aria-label="Cerrar sesión"><i class="fa-solid fa-right-from-bracket"></i></button></div></header>
+        <div class="dashboard-body"><div class="dashboard-header"><div><span class="eyebrow">INVENTARIO / CATÁLOGO</span><h1>Artículos</h1><p>Consulta las referencias y sus existencias actuales.</p></div></div>
+            <div class="module-toolbar"><div><h2>Listado de artículos</h2><p><span id="articleCount">5</span> referencias registradas</p></div><a class="module-action" href="registro_productos.html"><i class="fa-solid fa-plus"></i> Registrar artículo</a></div>
+            <section class="module-panel"><div class="module-panel-heading"><h2>Inventario de productos</h2><div class="module-filters"><input class="module-input" type="search" id="articleSearch" placeholder="Buscar artículo..." aria-label="Buscar artículo"><select class="module-select" id="stockFilter" aria-label="Filtrar por estado"><option value="all">Todos los estados</option><option value="ok">Stock suficiente</option><option value="low">Reponer</option></select></div></div>
+                <div class="module-table-wrap"><table class="module-table"><thead><tr><th>SKU</th><th>Artículo</th><th>Categoría</th><th>Unidad</th><th>Existencias</th><th>Estado</th></tr></thead><tbody id="articleRows"><tr data-stock="ok"><td>MEL-18</td><td>Escritorio</td><td>Muebles</td><td>Pieza</td><td>34</td><td><span class="module-badge success">Disponible</span></td></tr><tr data-stock="ok"><td>CLO-08</td><td>Closet</td><td>Muebles</td><td>Pieza</td><td>8</td><td><span class="module-badge success">Disponible</span></td></tr><tr data-stock="ok"><td>PEI-08</td><td>Peinadora</td><td>Muebles</td><td>Pieza</td><td>8</td><td><span class="module-badge success">Disponible</span></td></tr><tr data-stock="ok"><td>NOC-10</td><td>Nochero</td><td>Muebles</td><td>Pieza</td><td>10</td><td><span class="module-badge success">Disponible</span></td></tr><tr data-stock="low"><td>REP-04</td><td>Repisa</td><td>Muebles</td><td>Pieza</td><td>4</td><td><span class="module-badge warning">Revisar stock</span></td></tr></tbody></table><p class="module-empty" id="articleEmpty" hidden>No hay artículos que coincidan con la búsqueda.</p></div>
+            </section>
+        </div>
+    </main>
+</div>
+<script src="../js/app.js"></script><script src="../js/articulos.js"></script>
+</body>
+</html>

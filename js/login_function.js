@@ -31,8 +31,8 @@ function autenticarUsuario(e) {
         // 4. Guardamos en sessionStorage (los datos se borran solos al cerrar la pestaña)
         sessionStorage.setItem('sesion_activa', JSON.stringify(sesionPasajera));
 
-        // 5. Redirección directa al index.html
-        window.location.href = "index.html"; 
+        const destination = usuarioEncontrado.rol === 'admin' ? 'index1.0.html' : 'index.html';
+        window.location.href = destination;
     } else {
         alert("❌ Correo o contraseña incorrectos. Verifica tus datos o regístrate.");
     }

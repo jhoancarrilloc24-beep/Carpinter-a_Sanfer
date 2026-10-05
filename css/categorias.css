@@ -1,0 +1,15 @@
+
+/* SECCIÓN: ESTILOS GENERALES */
+/* ========================================= */
+.category-layout {
+    display: grid;
+    grid-template-columns: minmax(250px, 0.75fr) minmax(0, 1.25fr);
+    align-items: start;
+    gap: 18px;
+}
+
+@media (max-width: 1000px) {
+    .category-layout {
+        grid-template-columns: 1fr;
+    }
+}

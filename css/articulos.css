@@ -1,0 +1,22 @@
+
+/* SECCIÓN: ESTILOS GENERALES */
+/* ========================================= */
+.module-panel-heading .module-filters {
+    justify-content: flex-end;
+}
+
+#articleSearch {
+    width: min(260px, 34vw);
+}
+
+@media (max-width: 900px) {
+    .module-panel-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .module-panel-heading .module-filters {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}

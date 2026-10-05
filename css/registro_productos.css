@@ -1,0 +1,185 @@
+
+/* SECCIÓN: ESTILOS GENERALES */
+/* ========================================= */
+.dashboard-body {
+    min-height: calc(100vh - 70px);
+}
+
+.form-card-container {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-card);
+    box-shadow: 0 4px 16px rgba(44, 37, 35, 0.06);
+}
+
+.form-card-heading {
+    padding: 22px 26px;
+    border-bottom: 1px solid var(--border-color);
+    background: #fffdfa;
+}
+
+.form-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.form-icon {
+    display: grid;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 7px;
+    background: #fff0df;
+    color: var(--accent-gold-dark);
+    font-size: 1.05rem;
+}
+
+.form-header .section-kicker {
+    margin-bottom: 4px;
+}
+
+.form-header h2 {
+    color: var(--text-main);
+    font-size: 1.1rem;
+}
+
+.product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    padding: 26px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: var(--text-main);
+    font-size: 0.84rem;
+    font-weight: 600;
+}
+
+.form-group label span {
+    color: var(--accent-gold-dark);
+}
+
+.form-group input {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 13px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    outline: none;
+    background: #fff;
+    color: var(--text-main);
+    font: inherit;
+    font-size: 0.88rem;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.form-group input::placeholder {
+    color: #9b938c;
+}
+
+.form-group input:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 3px rgba(198, 138, 76, 0.16);
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 4px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.btn-cancel,
+.btn-submit {
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 600;
+    transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.btn-cancel {
+    border-color: var(--border-color);
+    background: #fff;
+    color: var(--text-muted);
+}
+
+.btn-cancel:hover {
+    border-color: #d4c9bc;
+    background: #f9f8f6;
+    color: var(--text-main);
+}
+
+.btn-submit {
+    background: var(--accent-gold);
+    color: #fff;
+}
+
+.btn-submit:hover {
+    background: var(--accent-gold-dark);
+}
+
+@media (max-width: 760px) {
+    .dashboard-body {
+        min-height: auto;
+    }
+
+    .form-card-container {
+        max-width: none;
+    }
+
+    .form-card-heading,
+    .product-form {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .product-form {
+        gap: 18px;
+    }
+
+    .form-buttons {
+        flex-direction: column-reverse;
+    }
+
+    .btn-cancel,
+    .btn-submit {
+        width: 100%;
+    }
+}

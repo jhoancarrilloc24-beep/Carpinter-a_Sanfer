@@ -1,0 +1,243 @@
+
+<!-- SECCIÓN: ESTRUCTURA GENERAL -->
+<!-- ========================================= -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repisas Premium Gris | Carpintería Sanfer</title>
+  <link rel="stylesheet" href="../css/producto_detalle.css">
+</head>
+<body>
+
+  <!-- Barra de Navegación / Banner Superior -->
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="../assets/logo_campinteria.jpeg" alt="Logo Carpintería Sanfer" class="logo-img">
+    </div>
+
+    <nav class="nav-links">
+      <a href="#">Acerca de</a>
+      <a href="#">PQRS</a>
+      <a href="#">Preguntas frecuentes</a>
+    </nav>
+
+    <!-- Menú del Carrito con Pestaña Desplegable -->
+    <div class="cart-wrapper">
+      <button class="cart-btn" type="button" aria-label="Ver carrito, 0 productos" aria-expanded="false" aria-controls="cart-dropdown">
+        🛒 <span class="cart-badge">0</span>
+      </button>
+
+      <!-- Pestaña flotante del carrito -->
+      <div class="cart-dropdown" id="cart-dropdown" aria-label="Contenido del carrito" hidden>
+        <div class="cart-items" aria-live="polite">
+          <p class="cart-empty">Tu carrito está vacío.</p>
+        </div>
+        <p class="cart-total" hidden></p>
+        <button class="btn btn-primary btn-cart-checkout" type="button" hidden>Ver Carrito Completo</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- Miga de Pan / Disponibilidad -->
+    <div class="product-top-bar">
+      <span class="stock-tag">10 unidades disponibles</span>
+    </div>
+
+    <!-- Sección Principal del Producto -->
+    <section class="product-detail">
+      
+      <!-- Galería de Imagen -->
+      <div class="product-gallery">
+        <img src="https://via.placeholder.com/500x500" alt="Repisas Premium Gris" class="main-image">
+      </div>
+
+      <!-- Información del Producto -->
+      <div class="product-info">
+        <span class="brand-subtitle">Carpintería Sanfer</span>
+        <h1 class="product-title">Repisas <span class="highlight">Premium Gris</span></h1>
+
+        <!-- Calificación -->
+        <div class="rating">
+          <span class="stars">★★★★★</span>
+          <span class="rating-score">4.8</span>
+          <span class="reviews-count">(240 reseñas)</span>
+        </div>
+
+        <!-- Bloque de Precio -->
+        <div class="price-box">
+          <span class="price-label">Precio</span>
+          <div class="price-values">
+            <span class="current-price">$ 60.000 COP</span>
+            <span class="original-price">COP $100.000 COP precio original</span>
+          </div>
+        </div>
+
+        <p class="description">
+          Versatilidad y estilo en tres repisas flotantes. Combina perfectamente con cualquier decoración y proporciona el máximo nivel de confort y organización en tu hogar.
+        </p>
+
+        <!-- Selección de Colores -->
+        <div class="option-group">
+          <label>Colores:</label>
+          <div class="color-options">
+            <button class="color-dot white active" title="Blanco"></button>
+            <button class="color-dot black" title="Negro"></button>
+            <button class="color-dot oak" title="Roble"></button>
+            <button class="color-dot walnut" title="Nogal"></button>
+          </div>
+        </div>
+
+        <!-- Modo de Compra -->
+        <div class="option-group">
+          <label>¿Cómo lo quieres comprar?</label>
+          <div class="radio-options">
+            <label class="radio-label">
+              <input type="radio" name="purchase-mode" checked> Solo repisa
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="purchase-mode"> SET x3
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="purchase-mode"> Conjunto completo
+            </label>
+          </div>
+        </div>
+
+        <!-- Cantidad -->
+        <div class="option-group">
+          <label for="product-quantity">Cantidad:</label>
+          <div class="quantity-selector">
+            <button type="button" class="quantity-decrease" aria-label="Disminuir cantidad">-</button>
+            <input id="product-quantity" type="number" value="1" min="1">
+            <button type="button" class="quantity-increase" aria-label="Aumentar cantidad">+</button>
+          </div>
+        </div>
+
+        <!-- Botones de Acción -->
+        <div class="action-buttons">
+          <button class="btn btn-primary btn-add-cart" type="button">Añadir al carrito</button>
+          <button class="btn btn-wishlist" aria-label="Guardar en favoritos">🤍</button>
+        </div>
+
+        <!-- Beneficios -->
+        <div class="benefits-list">
+          <div class="benefit-item">
+            <span class="benefit-icon">🚚</span>
+            <div>
+              <strong>Envío Gratis</strong>
+              <p>A Cúcuta y área metropolitana. Entregas en 3-5 días hábiles.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">🔨</span>
+            <div>
+              <strong>Armado incluido</strong>
+              <p>Sin costo adicional. Nuestros expertos realizan el montaje.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">🛡️</span>
+            <div>
+              <strong>30 Días de Garantía</strong>
+              <p>Para cambios o devoluciones directas sin complicaciones.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Características Técnicas -->
+    <section class="tech-specs">
+      <h2>Características técnicas</h2>
+      
+      <div class="specs-grid">
+        <div class="spec-card">
+          <span class="spec-icon">📐</span>
+          <span class="spec-title">DIMENSIONES</span>
+          <span class="spec-value">65 × 48 × 50 cm</span>
+        </div>
+
+        <div class="spec-card">
+          <span class="spec-icon">⚖️</span>
+          <span class="spec-title">PESO</span>
+          <span class="spec-value">6.3 kg</span>
+        </div>
+
+        <div class="spec-card">
+          <span class="spec-icon">🌲</span>
+          <span class="spec-title">MATERIAL</span>
+          <span class="spec-value">Roble natural certificado</span>
+        </div>
+
+        <div class="spec-card">
+          <span class="spec-icon">💪</span>
+          <span class="spec-title">CARGA MÁX.</span>
+          <span class="spec-value">115 kg</span>
+        </div>
+
+        <div class="spec-card">
+          <span class="spec-icon">🎨</span>
+          <span class="spec-title">ACABADO</span>
+          <span class="spec-value">Laca mate natural</span>
+        </div>
+
+        <div class="spec-card">
+          <span class="spec-icon">🏠</span>
+          <span class="spec-title">USO</span>
+          <span class="spec-value">Interior / Comedor / Sala</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonios de Clientes -->
+    <section class="reviews-section">
+      <h2>Lo que dicen nuestros clientes</h2>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Llegó perfectamente embalado, el armado fue sencillo y la calidad es increíble para el precio."</p>
+          <span class="review-author">- María C. B.</span>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Compré el set de 3 para el comedor. Mis invitados siempre me preguntan dónde los conseguí. ¡Hermosos!"</p>
+          <span class="review-author">- Juan P. M.</span>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Muy sólidas y elegantes. El servicio postventa de Sanfer es de primera, respondieron al instante."</p>
+          <span class="review-author">- Lucía M. C.</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="../assets/logo_campinteria.jpeg" alt="Logo Carpintería Sanfer" class="footer-logo-img">
+        <p>Artesanía colombiana con alma y tradición desde 1994</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Acerca de nosotros</a>
+        <a href="#">Radica tu PQRS</a>
+        <a href="#">Preguntas frecuentes</a>
+        <a href="#">Política de privacidad</a>
+      </div>
+      <p class="copyright">© 2026 Carpintería Sanfer. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="../js/producto_detalle.js"></script>
+</body>
+</html>

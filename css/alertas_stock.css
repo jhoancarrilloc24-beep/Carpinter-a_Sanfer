@@ -1,0 +1,21 @@
+/* ========================================= */
+
+/* SECCIÓN: ESTILOS GENERALES */
+/* ========================================= */
+.module-alert [data-resolve] {
+    flex: 0 0 auto;
+}
+
+.module-alert-content .module-badge {
+    margin-top: 10px;
+}
+
+@media (max-width: 760px) {
+    .module-alert {
+        flex-wrap: wrap;
+    }
+
+    .module-alert [data-resolve] {
+        margin-left: 50px;
+    }
+}

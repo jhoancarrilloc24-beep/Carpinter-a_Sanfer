@@ -1,0 +1,121 @@
+
+<!-- SECCIÓN: ESTRUCTURA GENERAL -->
+<!-- ========================================= -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historial de compras | Carpintería Sanfer</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/gestor_inventarios.css" />
+  <link rel="stylesheet" href="../css/modules.css" />
+  <link rel="stylesheet" href="../css/historial_compras.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar principal -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-mark"><i class="fa-solid fa-hammer"></i></span>
+        <span class="logo-text">Carpintería<br><strong>Sanfer</strong></span>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li><a href="articulos.html"><i class="fa-solid fa-box"></i> Artículos</a></li>
+        <li><a href="categorias.html"><i class="fa-solid fa-tags"></i> Categorías</a></li>
+        <li><a href="proveedores.html"><i class="fa-solid fa-truck-field"></i> Proveedores</a></li>
+        <li><a href="alertas_stock.html"><i class="fa-solid fa-bell"></i> Alertas de stock</a></li>
+        <li><a href="configuracion.html"><i class="fa-solid fa-gear"></i> Configuración</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <header class="top-navbar">
+        <span class="view-title">Gestor de inventarios</span>
+        <nav class="top-menu" aria-label="Navegación principal">
+          <a href="inicio.html">Inicio</a>
+          <a href="registro_productos.html">Registro de productos</a>
+          <a href="index.html">Gestor de inventarios</a>
+          <a href="ventas_pedidos.html">Ventas/Pedidos</a>
+          <a href="informes.html">Informes</a>
+        </nav>
+        <div class="top-actions">
+          <button class="btn-logout" data-logout type="button" title="Cerrar sesión" aria-label="Cerrar sesión">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </button>
+        </div>
+      </header>
+
+      <div class="dashboard-body">
+        <!-- Sección cabecera historial -->
+        <div class="dashboard-header">
+          <div>
+            <span class="eyebrow">VENTAS / HISTORIAL</span>
+            <h1>Historial de compras</h1>
+            <p>Revisa los pedidos realizados y la información de envío asociada.</p>
+          </div>
+        </div>
+
+        <!-- Sección resumen de ventas -->
+        <section class="module-stats sales-overview">
+          <div class="module-stat">
+            <span>Total compras</span>
+            <strong id="totalCompras">0</strong>
+            <small>Pedidos registrados</small>
+          </div>
+          <div class="module-stat">
+            <span>Ingresos</span>
+            <strong id="ventasTotales">$ 0 COP</strong>
+            <small>Acumulado</small>
+          </div>
+          <div class="module-stat">
+            <span>Envíos pendientes</span>
+            <strong id="enviosPendientes">0</strong>
+            <small>Por despachar</small>
+          </div>
+        </section>
+
+        <!-- Sección filtros -->
+        <section class="module-panel order-panel">
+          <div class="module-panel-heading">
+            <h2>Compras recientes</h2>
+            <div class="module-filters">
+              <input class="module-input" type="search" id="orderSearch" placeholder="Buscar por cliente o pedido" aria-label="Buscar compra" />
+              <select class="module-select" id="statusFilter" aria-label="Filtrar por estado">
+                <option value="all">Todos</option>
+                <option value="pendiente">Pendiente</option>
+                <option value="enviado">Enviado</option>
+                <option value="entregado">Entregado</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="module-table-wrap">
+            <table class="module-table">
+              <thead>
+                <tr>
+                  <th>Pedido</th>
+                  <th>Cliente</th>
+                  <th>Productos</th>
+                  <th>Total</th>
+                  <th>Método</th>
+                  <th>Estado</th>
+                  <th>Dirección</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTableBody"></tbody>
+            </table>
+            <p class="module-empty" id="ordersEmpty" hidden>No hay compras que coincidan con tu búsqueda.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/historial_compras.js"></script>
+</body>
+</html>

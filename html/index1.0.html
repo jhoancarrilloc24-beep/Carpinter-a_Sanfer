@@ -1,0 +1,126 @@
+
+<!-- SECCIÓN: ESTRUCTURA GENERAL -->
+<!-- ========================================= -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Inventarios - Carpintería Sanfer</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/modules.css">
+    <link rel="stylesheet" href="../css/gestor_inventarios.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <span class="logo-mark" aria-hidden="true"><i class="fa-solid fa-hammer"></i></span>
+                <span class="logo-text">Carpintería<br><strong>Sanfer</strong></span>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="articulos.html"><i class="fa-solid fa-box"></i> Artículos</a></li>
+                <li><a href="categorias.html"><i class="fa-solid fa-tags"></i> Categorías</a></li>
+                <li><a href="proveedores.html"><i class="fa-solid fa-truck-field"></i> Proveedores</a></li>
+                <li><a href="alertas_stock.html"><i class="fa-solid fa-bell"></i> Alertas de stock</a></li>
+                <li><a href="historial_compras.html"><i class="fa-solid fa-clock-rotate-left"></i> Historial de compras</a></li>
+                <li><a href="configuracion.html"><i class="fa-solid fa-gear"></i> Configuración</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-navbar">
+                <span class="view-title">Gestor de inventarios</span>
+                <nav class="top-menu" aria-label="Navegación del inventario">
+                    <a href="inicio.html">Inicio</a>
+                    <a href="registro_productos.html">Registro de productos</a>
+                    <a href="index.html" class="active-link">Gestor de inventarios</a>
+                    <a href="ventas_pedidos.html">Ventas/Pedidos</a>
+                    <a href="historial_compras.html">Historial de compras</a>
+                    <a href="informes.html">Informes</a>
+                </nav>
+                <div class="top-actions">
+                    <button class="btn-logout" type="button" data-logout title="Cerrar sesión" aria-label="Cerrar sesión"><i class="fa-solid fa-right-from-bracket"></i></button>
+                </div>
+            </header>
+
+            <div class="dashboard-body" id="resumen">
+                <div class="dashboard-header">
+                    <div>
+                        <span class="eyebrow">CARPINTERÍA SANFER / OPERACIONES</span>
+                        <h1>Gestor de inventarios</h1>
+                        <p>Resumen general de existencias y valor del stock.</p>
+                    </div>
+                    <span class="updated-label" aria-live="polite"><i class="fa-regular fa-clock"></i> Actualizado hoy</span>
+                </div>
+
+                <div class="panel-control-bar">
+                    <div>
+                        <span class="section-kicker">VISTA GENERAL</span>
+                        <h2>Control de existencias</h2>
+                    </div>
+                    <button class="btn-action" type="button"><i class="fa-solid fa-rotate"></i> Actualizar datos</button>
+                </div>
+
+                <section class="metrics-grid" id="metricas" aria-label="Métricas del inventario">
+                    <div class="metric-card">
+                        <div class="metric-heading"><span class="metric-icon"><i class="fa-solid fa-cubes-stacked"></i></span><span>Artículos registrados</span></div>
+                        <strong>05</strong>
+                        <small>Referencias activas</small>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-heading"><span class="metric-icon"><i class="fa-solid fa-boxes-stacked"></i></span><span>Unidades en stock</span></div>
+                        <strong>54</strong>
+                        <small>Unidades disponibles</small>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-heading"><span class="metric-icon"><i class="fa-solid fa-coins"></i></span><span>Valor del inventario</span></div>
+                        <strong>$ 3.000</strong>
+                        <small>Valor total estimado</small>
+                    </div>
+                    <div class="metric-card alerts-card">
+                        <div class="metric-heading"><span class="metric-icon alert-icon"><i class="fa-solid fa-triangle-exclamation"></i></span><span>Atención necesaria</span></div>
+                        <strong>01 <span class="alert-caption">alerta activa</span></strong>
+                        <small>Hay existencias por reponer</small>
+                    </div>
+                </section>
+
+                <section class="inventory-overview" id="alertas" aria-labelledby="inventory-title">
+                    <div class="overview-heading">
+                        <div>
+                            <span class="section-kicker">SALUD DEL STOCK</span>
+                            <h2 id="inventory-title">Todo en orden, con una excepción</h2>
+                        </div>
+                        <span class="stock-badge"><i class="fa-solid fa-circle-check"></i> 4 de 5 al día</span>
+                    </div>
+                    <div class="stock-summary">
+                        <div class="stock-summary-copy">
+                            <div class="summary-mark"><i class="fa-solid fa-clipboard-check"></i></div>
+                            <div>
+                                <h3>El inventario está bajo control</h3>
+                                <p>Una referencia llegó a su nivel de reposición. El resto mantiene existencias suficientes.</p>
+                            </div>
+                        </div>
+                        <div class="stock-progress" role="img" aria-label="4 de 5 referencias con stock suficiente">
+                            <div class="progress-track"><span></span></div>
+                            <div class="progress-labels"><span>Stock suficiente</span><strong>80%</strong></div>
+                        </div>
+                    </div>
+                    <div class="alert-row">
+                        <span class="alert-row-icon"><i class="fa-solid fa-arrow-trend-down"></i></span>
+                        <div class="alert-row-copy">
+                            <strong>Reposición recomendada</strong>
+                            <span>Una referencia está cerca de su stock mínimo.</span>
+                        </div>
+                        <span class="alert-row-count">01</span>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

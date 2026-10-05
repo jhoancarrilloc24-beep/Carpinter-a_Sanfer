@@ -1,0 +1,127 @@
+
+<!-- SECCIÓN: ESTRUCTURA GENERAL -->
+<!-- ========================================= -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Método de pago | Carpintería Sanfer</title>
+  <link rel="stylesheet" href="../css/metodo_pago.css" />
+</head>
+<body>
+  <main class="checkout-page">
+    <section class="checkout-card">
+      <div class="summary-panel">
+        <span class="eyebrow">PAGO</span>
+        <h1>Método de pago</h1>
+        <div id="checkoutItems" class="checkout-items"></div>
+        <div class="summary-total">
+          <span>Total estimado</span>
+          <strong id="checkoutTotal">$ 0 COP</strong>
+        </div>
+      </div>
+
+      <form id="paymentForm" class="payment-form">
+        <h2>Datos de envío</h2>
+
+        <div class="field-grid">
+          <div class="field-group">
+            <label for="nombre">Nombre completo</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Escribe tu nombre" required />
+          </div>
+
+          <div class="field-group">
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" name="correo" type="email" placeholder="correo@ejemplo.com" required />
+          </div>
+
+          <div class="field-group">
+            <label for="telefono">Número de teléfono</label>
+            <input id="telefono" name="telefono" type="tel" placeholder="300 123 4567" required />
+          </div>
+
+          <div class="field-group">
+            <label for="direccion">Dirección</label>
+            <input id="direccion" name="direccion" type="text" placeholder="Calle 12 # 3-45" required />
+          </div>
+        </div>
+
+        <div class="payment-methods">
+          <h3>Selecciona tu método de pago</h3>
+          <label class="method-option">
+            <input type="radio" name="metodoPago" value="Tarjeta de crédito" checked />
+            <span>Tarjeta de crédito</span>
+          </label>
+          <label class="method-option">
+            <input type="radio" name="metodoPago" value="Nequi" />
+            <span>Nequi</span>
+          </label>
+          <label class="method-option">
+            <input type="radio" name="metodoPago" value="Efectivo" />
+            <span>Efectivo</span>
+          </label>
+        </div>
+
+        <div class="payment-panels">
+          <div class="payment-panel active" data-payment-panel="Tarjeta de crédito">
+            <h3>Datos de la tarjeta</h3>
+            <div class="field-grid">
+              <div class="field-group full-width">
+                <label for="nombreTitular">Nombre del titular</label>
+                <input id="nombreTitular" name="nombreTitular" type="text" placeholder="Nombre como aparece en la tarjeta" />
+              </div>
+              <div class="field-group full-width">
+                <label for="numeroTarjeta">Número de tarjeta</label>
+                <input id="numeroTarjeta" name="numeroTarjeta" type="text" inputmode="numeric" placeholder="1234 5678 9012 3456" />
+              </div>
+              <div class="field-group">
+                <label for="fechaVencimiento">Fecha de vencimiento</label>
+                <input id="fechaVencimiento" name="fechaVencimiento" type="text" placeholder="MM/AA" />
+              </div>
+              <div class="field-group">
+                <label for="cvv">CVV</label>
+                <input id="cvv" name="cvv" type="password" inputmode="numeric" placeholder="123" />
+              </div>
+            </div>
+          </div>
+
+          <div class="payment-panel" data-payment-panel="Nequi">
+            <h3>Datos de Nequi</h3>
+            <div class="field-grid">
+              <div class="field-group">
+                <label for="nombreNequi">Nombre</label>
+                <input id="nombreNequi" name="nombreNequi" type="text" placeholder="Tu nombre" />
+              </div>
+              <div class="field-group">
+                <label for="celularNequi">Número de celular</label>
+                <input id="celularNequi" name="celularNequi" type="tel" placeholder="300 123 4567" />
+              </div>
+              <div class="field-group full-width">
+                <label for="documentoNequi">Documento</label>
+                <input id="documentoNequi" name="documentoNequi" type="text" placeholder="Cédula o identificación" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <label class="save-option">
+          <input id="guardarDatos" type="checkbox" />
+          Guardar esta información para futuras compras
+        </label>
+
+        <div class="actions">
+          <a class="secondary-btn" href="lista_carrito.html">Volver al carrito</a>
+          <button class="primary-btn" type="submit">Confirmar pedido</button>
+        </div>
+
+        <div id="successMessage" class="success-message" hidden>
+          ¡Pedido confirmado! La información quedará guardada para tu próxima compra.
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="../js/metodo_pago.js"></script>
+</body>
+</html>

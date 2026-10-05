@@ -63,7 +63,7 @@ function guardarRegistroUsuario(e) {
     const existe = usuariosRegistrados.some(user => user.email === nuevoUsuario.email);
     if (existe) {
         alert("⚠️ Este correo ya está registrado. Por favor, inicia sesión.");
-        window.location.href = "../html/login.html";
+        window.location.href = "login.html";
         return;
     }
 
