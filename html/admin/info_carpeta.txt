@@ -1,0 +1,4 @@
+Panel de Administración / Inventario
+
+todo lo relacionado a la gestion de Inventario del la
+pagina por parte de los administradores

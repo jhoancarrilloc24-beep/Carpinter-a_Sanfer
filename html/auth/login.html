@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nueva Contraseña - Carpintería Sanfer</title>
-    <!-- Vinculación del CSS -->
-    <link rel="stylesheet" href="../css/new_password_style.css">
+    <title>Iniciar Sesión - Carpintería Sanfer</title>
+    <!-- Vinculación del archivo CSS externo -->
+    <link rel="stylesheet" href="../../css/auth/login_style.css">
 </head>
 <body>
-    <!-- Logo de la página -->
-    <img src="../assets/logo_campinteria.jpeg" alt="Logo oficial de Carpintería" class="logo">
 
-    <!-- Círculos de fondo -->
+    <!-- Logo de la página -->
+    <img src="../../assets/logo_campinteria.jpeg" alt="Logo oficial de Carpintería" class="logo">
+
+    <!-- Elementos decorativos (círculos de fondo) -->
     <div class="circulo-contenido circulo-grande-1"></div>
     <div class="circulo-contenido circulo-grande-2"></div>
     <div class="circulo-contenido circulo-mediano mediano-1"></div> 
@@ -30,7 +31,7 @@
 
     <!-- Contenedor principal del formulario -->
     <main class="login-container">
-        <form id="formulario_nueva_password" name="formulario_nueva_password" class="formulario-login">
+        <form action="#" method="POST" id="formulario_login" name="formulario_login" class="formulario-login">
 
             <!-- Ícono de usuario superior en halo circular -->
             <div class="avatar-container">
@@ -42,13 +43,21 @@
                 </div>
             </div>
 
-            <h1 class="titulo-form">Ingresa la nueva contraseña</h1>
-
-            <!-- Campo 1: Nueva Contraseña -->
+            <h1 class="titulo-form">Iniciar Sesión</h1>
+        
+            <a href="register.html" class="enlace-secundario">¿No tienes una cuenta?</a>
+            
+            <!-- Campo de Correo -->
             <div class="grupo-input">
-                <label for="password" class="label-form">Escribe la nueva contraseña</label>
+                <label for="email" class="label-form">Correo</label>
+                <input type="email" id="email" name="email" class="input-form" placeholder="Ingrese su correo" required>
+            </div>
+
+            <!-- Campo de Contraseña con Ojito Toggle -->
+            <div class="grupo-input">
+                <label for="password" class="label-form">Contraseña</label>
                 <div class="input-password-wrapper">
-                    <input type="password" id="password" name="password" class="input-form" placeholder="Ej: usuario12gty$-2" required>
+                    <input type="password" id="password" name="password" class="input-form" placeholder="Ingresa tu contraseña" required>
                     <button type="button" class="btn-toggle-password" onclick="togglePasswordVisibility('password', this)" aria-label="Mostrar u ocultar contraseña">
                         <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path class="eye-open" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -60,27 +69,14 @@
                 </div>
             </div>
 
-            <!-- Campo 2: Confirmar Contraseña (ID corregido a "confirm_password") -->
-            <div class="grupo-input">
-                <label for="confirm_password" class="label-form">Confirma la nueva contraseña</label>
-                <div class="input-password-wrapper">
-                    <input type="password" id="confirm_password" name="confirm_password" class="input-form" placeholder="Ej: usuario12gty$-2" required>
-                    <button type="button" class="btn-toggle-password" onclick="togglePasswordVisibility('confirm_password', this)" aria-label="Mostrar u ocultar contraseña">
-                        <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path class="eye-open" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                            <circle class="eye-open" cx="12" cy="12" r="3"></circle>
-                            <path class="eye-closed" style="display: none;" d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
-                            <line class="eye-closed" style="display: none;" x1="1" y1="1" x2="23" y2="23"></line>
-                        </svg>
-                    </button>
-                </div>
+            <div class="acciones-form">
+                <a href="request_reset.html" class="enlace-olvido">¿Se te olvidó tu contraseña?</a>
             </div>
 
-            <!-- Botón de envío -->
-            <button type="submit" id="Restablecer" name="Restablecer" class="btn-submit">
-                Restablecer
+            <button type="submit" id="acceder" name="acceder" class="btn-submit">
+                Acceder
             </button>
-
+            
             <!-- Pie de página -->
             <footer class="footer-note">
                 &copy; <span id="year"></span> Carpintería Sanfer — Todos los derechos reservados
@@ -114,6 +110,7 @@
             }
         }
     </script>
-    <script src="../js/password_reset.js"></script>
+
+    <script src="../../js/auth/login_function.js"></script>
 </body>
 </html>
