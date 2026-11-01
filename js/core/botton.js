@@ -6,9 +6,5 @@ document.addEventListener('click', (event) => {
 
     if (!logoutButton) return;
 
-    const shouldLogout = window.confirm('¿Deseas cerrar la sesión?');
-    if (!shouldLogout) return;
-
-    sessionStorage.clear();
-    window.location.href = 'inicio.html?sesion=cerrada';
+    window.location.href = '../../index.html';
 });

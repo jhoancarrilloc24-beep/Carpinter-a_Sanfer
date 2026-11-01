@@ -96,6 +96,28 @@ body {
   font-size: 1rem;
 }
 
+.icon-btn[hidden],
+.user-nav-profile[hidden] {
+  display: none;
+}
+
+.user-nav-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.1);
+  color: #ffffff;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.user-nav-role {
+  color: #d1c7bd;
+  font-size: 0.8rem;
+}
+
 .icon-btn .badge {
   position: absolute;
   top: -4px;

@@ -31,10 +31,8 @@ function autenticarUsuario(e) {
         // 4. Guardamos en sessionStorage (los datos se borran solos al cerrar la pestaña)
         sessionStorage.setItem('sesion_activa', JSON.stringify(sesionPasajera));
 
-        const destination = usuarioEncontrado.rol === 'admin'
-            ? '../admin/gestor_de_inventario.html'
-            : '../../index.html';
-        window.location.href = destination;
+        // Redirixir a todos os usuarios (incluído o administrador) á páxina principal
+        window.location.href = '../../index.html';
     } else {
         alert("❌ Correo o contraseña incorrectos. Verifica tus datos o regístrate.");
     }

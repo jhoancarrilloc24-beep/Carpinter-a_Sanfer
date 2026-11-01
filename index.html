@@ -16,15 +16,19 @@
     </div>
 
     <button class="icon-btn mobile-menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-links">☰</button>
-
+    
     <nav class="nav-links" id="nav-links">
-      <a href="index.html" class="active">Inicio</a>
+      <a href="/html/auth/login.html" class="active" id="homeNavLink">Inicio</a>
       <a href="#catalogo">Tienda</a>
       <a href="#servicios">Servicios</a>
       <a href="#noticias">Noticias</a>
       <a href="#contacto">Contacto</a>
+      <!-- Enlace exclusivo para el Administrador (oculto por defecto) -->
+      <a href="html/admin/gestor_de_inventario.html" id="adminNavLink" hidden>Gestión de inventarios</a>
+      <a href="#" id="logoutNavLink" hidden>Cerrar sesión</a>
     </nav>
 
+      
     <div class="header-actions">
       <div class="cart-wrapper">
         <button class="icon-btn cart-toggle" type="button" aria-label="Ver carrito, 0 productos" aria-expanded="false" aria-controls="cart-dropdown">
@@ -38,7 +42,12 @@
           <a class="cart-view-link" href="html/tienda/lista_carrito.html">Ver carrito</a>
         </div>
       </div>
-      <a class="icon-btn" href="html/auth/login.html" title="Mi Cuenta" aria-label="Iniciar sesión">👤</a>
+      <a class="icon-btn" id="loginNavLink" href="html/auth/login.html" title="Mi Cuenta" aria-label="Iniciar sesión">👤</a>
+      <span class="user-nav-profile" id="userNavProfile" hidden>
+        <span aria-hidden="true">👤</span>
+        <span id="userNavName"></span>
+        <span class="user-nav-role" id="userNavRole"></span>
+      </span>
     </div>
   </header>
 
@@ -79,13 +88,14 @@
         <button class="filter-btn">Mesas de Comedor</button>
         <button class="filter-btn">Escritorios</button>
         <button class="filter-btn">Estanterías</button>
+        <button class="filter-btn">Otros</button>
       </div>
 
       <!-- Grid de Productos -->
       <div class="products-grid">
 
         <!-- Producto 1 -->
-        <article class="product-card">
+        <article class="product-card" data-category="Sillas y Banquetas">
           <div class="product-image-container">
             <img src="https://images.unsplash.com/photo-1580481072645-022f9a6d1205?auto=format&fit=crop&w=600&q=80" alt="Silla Ergonomica Premium" class="product-img">
             <span class="tag tag-discount">-20%</span>
@@ -103,7 +113,7 @@
         </article>
 
         <!-- Producto 2 -->
-        <article class="product-card">
+        <article class="product-card" data-category="Mesas de Comedor">
           <div class="product-image-container">
             <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=600&q=80" alt="Mesa de Centro Moderna" class="product-img">
           </div>
@@ -119,7 +129,7 @@
         </article>
 
         <!-- Producto 3 -->
-        <article class="product-card">
+        <article class="product-card" data-category="Escritorios">
           <div class="product-image-container">
             <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=600&q=80" alt="Escritorio Roble Clásico" class="product-img">
             <span class="tag tag-new">Nuevo</span>
@@ -136,7 +146,7 @@
         </article>
 
         <!-- Producto 4 -->
-        <article class="product-card">
+        <article class="product-card" data-category="Estanterías">
           <div class="product-image-container">
             <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=600&q=80" alt="Estantería Minimalista" class="product-img">
           </div>
@@ -229,7 +239,6 @@
       </div>
 
       <div class="news-grid">
-        <!-- Noticia 1 -->
         <article class="news-card">
           <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80" alt="Elegir tono de madera" class="news-img">
           <div class="news-content">
@@ -240,7 +249,6 @@
           </div>
         </article>
 
-        <!-- Noticia 2 -->
         <article class="news-card">
           <img src="https://images.unsplash.com/photo-1540518614846-7ede433c5172?auto=format&fit=crop&w=600&q=80" alt="Mantenimiento de roble" class="news-img">
           <div class="news-content">
@@ -251,7 +259,6 @@
           </div>
         </article>
 
-        <!-- Noticia 3 -->
         <article class="news-card">
           <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80" alt="Tendencias de diseño" class="news-img">
           <div class="news-content">
@@ -276,8 +283,6 @@
   <!-- Footer Completo -->
   <footer id="contacto" class="footer">
     <div class="footer-container">
-      
-      <!-- Columna 1: Empresa -->
       <div class="footer-col">
         <div class="footer-brand">
           <img src="assets/logo_campinteria.jpeg" alt="Logo Sanfer" class="footer-logo">
@@ -286,7 +291,6 @@
         <p class="footer-desc">Diseño y fabricación de muebles en madera de alta calidad. Transformando hogares con calidez y estilo.</p>
       </div>
 
-      <!-- Columna 2: Enlaces Rápidos -->
       <div class="footer-col">
         <h4>Empresa</h4>
         <ul>
@@ -297,7 +301,6 @@
         </ul>
       </div>
 
-      <!-- Columna 3: Atención al Cliente -->
       <div class="footer-col">
         <h4>Servicios</h4>
         <ul>
@@ -308,7 +311,6 @@
         </ul>
       </div>
 
-      <!-- Columna 4: Contacto -->
       <div class="footer-col">
         <h4>Contacto</h4>
         <p>📧 contacto@sanfer.com</p>
@@ -321,7 +323,6 @@
           <a href="#" aria-label="Twitter">Twitter</a>
         </div>
       </div>
-
     </div>
 
     <div class="footer-bottom">
@@ -329,7 +330,11 @@
     </div>
   </footer>
 
+  <!-- Scripts JavaScript -->
   <script src="js/tienda/carrito.js"></script>
   <script src="js/core/mobile_menu.js"></script>
+  <script src="js/core/filtro.js"></script>
+  <script src="js/core/admin_access.js"></script>
+  
 </body>
 </html>
