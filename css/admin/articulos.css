@@ -9,6 +9,15 @@
     width: min(260px, 34vw);
 }
 
+.product-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.product-actions .module-button {
+    flex-shrink: 0;
+}
+
 @media (max-width: 900px) {
     .module-panel-heading {
         align-items: flex-start;

@@ -65,7 +65,10 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="categoria">Categoría <span aria-hidden="true">*</span></label>
-                                <input type="text" id="categoria" name="categoria" placeholder="Ej. Madera maciza" required>
+                                <select class="module-select" id="categoria" name="categoria" required aria-describedby="categoryHelp">
+                                    <option value="">Cargando categorías...</option>
+                                </select>
+                                <small id="categoryHelp">Administra tus categorías desde <a href="categorias.html">Categorías</a>.</small>
                             </div>
                             <div class="form-group">
                                 <label for="unidad">Unidad de medida <span aria-hidden="true">*</span></label>
@@ -82,6 +85,11 @@
                                 <label for="stockMinimo">Límite para alertar stock bajo</label>
                                 <input type="number" id="stockMinimo" name="stockMinimo" min="0" step="1" value="5" required>
                             </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="precio">Precio de venta (COP) <span aria-hidden="true">*</span></label>
+                            <input type="number" id="precio" name="precio" min="1" step="1" placeholder="Ej. 250000" required>
                         </div>
 
                         <div class="form-group full-width">

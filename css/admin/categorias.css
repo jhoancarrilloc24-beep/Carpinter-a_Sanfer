@@ -8,6 +8,10 @@
     gap: 18px;
 }
 
+.category-delete-button {
+    white-space: nowrap;
+}
+
 @media (max-width: 1000px) {
     .category-layout {
         grid-template-columns: 1fr;

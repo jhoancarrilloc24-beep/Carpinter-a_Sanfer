@@ -417,6 +417,16 @@ body {
   background-color: #f2ece6;
 }
 
+.product-placeholder {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 .product-img {
   width: 100%;
   height: 100%;
@@ -461,6 +471,17 @@ body {
 
 .product-rating span {
   color: var(--text-muted);
+}
+
+.registered-product-stock {
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.registered-product-price {
+  display: block;
+  margin: 10px 0 0;
 }
 
 .product-price-box {

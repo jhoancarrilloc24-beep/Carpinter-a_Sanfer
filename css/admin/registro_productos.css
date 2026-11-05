@@ -103,6 +103,20 @@
     transition: border-color 160ms ease, box-shadow 160ms ease;
 }
 
+.form-group .module-select {
+    width: 100%;
+    min-height: 44px;
+}
+
+#categoryHelp {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+}
+
+#categoryHelp a {
+    color: var(--accent-gold-dark);
+}
+
 .form-group input::placeholder {
     color: #9b938c;
 }
