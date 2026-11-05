@@ -130,6 +130,69 @@
                         </div>
                     </section>
                 </div>
+
+                <section class="module-stats" aria-label="Resumen de pagos a proveedores">
+                    <div class="module-stat">
+                        <span>Pagos a proveedores del mes</span>
+                        <strong id="monthlySupplierPayments">$ 0 COP</strong>
+                        <small>Pagos registrados este mes</small>
+                    </div>
+                </section>
+
+                <section class="module-panel supplier-payments-panel">
+                    <div class="module-panel-heading">
+                        <h2>Registrar pago a proveedor</h2>
+                    </div>
+                    <div class="module-panel-body">
+                        <form class="module-form" id="supplierPaymentForm">
+                            <div class="form-group">
+                                <label for="paymentSupplier">Proveedor</label>
+                                <select class="module-select" id="paymentSupplier" required>
+                                    <option value="">Selecciona un proveedor</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="supplierPaymentAmount">Valor pagado (COP)</label>
+                                <input class="module-input" id="supplierPaymentAmount" type="number" min="1" step="1" required placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="supplierPaymentDate">Fecha del pago</label>
+                                <input class="module-input" id="supplierPaymentDate" type="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="supplierPaymentDescription">Concepto</label>
+                                <input class="module-input" id="supplierPaymentDescription" placeholder="Ej. Compra de madera">
+                            </div>
+                            <div class="module-form-actions">
+                                <button class="module-button" type="submit">
+                                    <i class="fa-solid fa-money-bill-wave"></i> Guardar pago
+                                </button>
+                            </div>
+                        </form>
+                        <p class="module-message" id="supplierPaymentMessage" aria-live="polite"></p>
+                    </div>
+                </section>
+
+                <section class="module-panel">
+                    <div class="module-panel-heading">
+                        <h2>Historial de pagos</h2>
+                        <span class="module-badge" id="supplierPaymentCount">0 pagos</span>
+                    </div>
+                    <div class="module-table-wrap">
+                        <table class="module-table">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Proveedor</th>
+                                    <th>Concepto</th>
+                                    <th>Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody id="supplierPaymentRows"></tbody>
+                        </table>
+                        <p class="module-empty" id="supplierPaymentEmpty" hidden>No hay pagos registrados.</p>
+                    </div>
+                </section>
             </div>
         </main>
     </div>

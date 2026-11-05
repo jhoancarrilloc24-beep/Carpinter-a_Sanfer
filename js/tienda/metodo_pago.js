@@ -4,6 +4,8 @@
 const CART_STORAGE_KEY = 'sanferCarrito';
 const USER_STORAGE_KEY = 'sanferEnvioData';
 const ORDER_STORAGE_KEY = 'sanfer.orders';
+const PRODUCTS_STORAGE_KEY = 'sanfer.products';
+const PRODUCT_HISTORY_STORAGE_KEY = 'sanfer.productHistory';
 const checkoutItems = document.querySelector('#checkoutItems');
 const checkoutTotal = document.querySelector('#checkoutTotal');
 const paymentForm = document.querySelector('#paymentForm');
@@ -19,6 +21,37 @@ function getCart() {
   } catch (error) {
     return [];
   }
+}
+
+function getStoredArray(key) {
+  try {
+    const saved = JSON.parse(localStorage.getItem(key) || '[]');
+    return Array.isArray(saved) ? saved : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveCheckoutData(values) {
+  const keys = [ORDER_STORAGE_KEY, PRODUCTS_STORAGE_KEY, PRODUCT_HISTORY_STORAGE_KEY];
+  const previousValues = new Map(keys.map(key => [key, localStorage.getItem(key)]));
+  try {
+    localStorage.setItem(ORDER_STORAGE_KEY, JSON.stringify(values.orders));
+    localStorage.setItem(PRODUCTS_STORAGE_KEY, JSON.stringify(values.products));
+    localStorage.setItem(PRODUCT_HISTORY_STORAGE_KEY, JSON.stringify(values.history));
+  } catch {
+    keys.forEach(key => {
+      try {
+        const previousValue = previousValues.get(key);
+        if (previousValue === null) localStorage.removeItem(key);
+        else localStorage.setItem(key, previousValue);
+      } catch {
+        // The original save error is reported to the customer below.
+      }
+    });
+    return false;
+  }
+  return true;
 }
 
 function formatPrice(value) {
@@ -95,29 +128,100 @@ paymentForm.addEventListener('submit', (event) => {
   if (!cart.length) return;
 
   const formData = Object.fromEntries(new FormData(paymentForm).entries());
-  if (guardarDatosCheckbox.checked) {
-    const { nombre, correo, telefono, direccion, metodoPago } = formData;
-    localStorage.setItem(USER_STORAGE_KEY, JSON.stringify({ nombre, correo, telefono, direccion, metodoPago }));
+  const products = getStoredArray(PRODUCTS_STORAGE_KEY);
+  const history = getStoredArray(PRODUCT_HISTORY_STORAGE_KEY);
+  const items = [];
+  const saleMovements = [];
+
+  for (const cartItem of cart) {
+    const quantity = Math.max(1, Number(cartItem.quantity) || 1);
+    const productIndex = products.findIndex(product => cartItem.sku
+      ? product.sku === cartItem.sku
+      : product.nombre?.trim().toLocaleLowerCase('es') === String(cartItem.name || '').trim().toLocaleLowerCase('es'));
+    const product = productIndex >= 0 ? products[productIndex] : null;
+
+    if (cartItem.sku && !product) {
+      successMessage.textContent = `El producto "${cartItem.name}" ya no está disponible en el inventario. Actualiza el carrito e inténtalo de nuevo.`;
+      successMessage.hidden = false;
+      return;
+    }
+
+    const availableQuantity = product ? Number(product.cantidad) || 0 : null;
+    if (product && availableQuantity < quantity) {
+      successMessage.textContent = `Existencias insuficientes para "${product.nombre}". Disponibles: ${availableQuantity} ${product.unidad || 'unidades'}.`;
+      successMessage.hidden = false;
+      return;
+    }
+
+    const item = {
+      sku: product?.sku || cartItem.sku || '',
+      name: product?.nombre || cartItem.name,
+      category: product?.categoria || cartItem.category || '',
+      quantity,
+      price: Number(cartItem.price) || 0,
+      unit: product?.unidad || ''
+    };
+    items.push(item);
+
+    const previousQuantity = availableQuantity;
+    if (product) product.cantidad = previousQuantity - quantity;
+    saleMovements.push({
+      tipo: 'venta',
+      fecha: new Date().toISOString(),
+      orderId: '',
+      sku: item.sku || undefined,
+      nombre: item.name,
+      categoria: item.category,
+      cantidad: quantity,
+      unidad: item.unit,
+      precio: item.price,
+      total: item.price * quantity,
+      stockAnterior: previousQuantity,
+      stockNuevo: product ? product.cantidad : null,
+      cliente: formData.nombre
+    });
   }
 
   const order = {
     id: `SF-${Date.now().toString().slice(-6)}`,
     customer: formData.nombre,
-    product: cart.map(item => `${item.name} × ${item.quantity}`).join(', '),
-    value: cart.reduce((total, item) => total + item.price * item.quantity, 0),
+    correo: formData.correo,
+    telefono: formData.telefono,
+    direccion: formData.direccion,
+    product: items.map(item => `${item.name} × ${item.quantity}`).join(', '),
+    items,
+    value: items.reduce((total, item) => total + item.price * item.quantity, 0),
     status: 'Por confirmar',
+    type: 'venta',
     metodoPago: formData.metodoPago,
     createdAt: new Date().toISOString(),
   };
-  let orders = [];
-  try {
-    const savedOrders = JSON.parse(localStorage.getItem(ORDER_STORAGE_KEY) || '[]');
-    orders = Array.isArray(savedOrders) ? savedOrders : [];
-  } catch (error) {
-    orders = [];
-  }
+  saleMovements.forEach(movement => {
+    movement.orderId = order.id;
+    history.push(movement);
+  });
+  const orders = getStoredArray(ORDER_STORAGE_KEY);
   orders.push(order);
-  localStorage.setItem(ORDER_STORAGE_KEY, JSON.stringify(orders));
+
+  if (!saveCheckoutData({ orders, products, history })) {
+    successMessage.textContent = 'No se pudo guardar la compra. Libera espacio del navegador e inténtalo de nuevo.';
+    successMessage.hidden = false;
+    return;
+  }
+
+  if (guardarDatosCheckbox.checked) {
+    const { nombre, correo, telefono, direccion, metodoPago } = formData;
+    try {
+      localStorage.setItem(USER_STORAGE_KEY, JSON.stringify({ nombre, correo, telefono, direccion, metodoPago }));
+    } catch {
+      successMessage.textContent = 'La compra se guardó, pero no se pudieron guardar tus datos para futuras compras.';
+      successMessage.hidden = false;
+      localStorage.removeItem(CART_STORAGE_KEY);
+      renderSummary();
+      return;
+    }
+  }
+
   localStorage.removeItem(CART_STORAGE_KEY);
 
   successMessage.textContent = `¡Pedido ${order.id} confirmado! Ya aparece en Ventas y pedidos.`;

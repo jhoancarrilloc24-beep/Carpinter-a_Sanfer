@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 addButton.dataset.cartAdd = '';
                 addButton.dataset.price = String(numericPrice);
                 addButton.dataset.currency = 'COP';
+                addButton.dataset.sku = product.sku || '';
                 addButton.textContent = 'Añadir al carrito';
                 details.append(addButton);
             }

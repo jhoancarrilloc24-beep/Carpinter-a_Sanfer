@@ -75,13 +75,15 @@ document.addEventListener('click', event => {
 
   const name = addButton.closest('.product-card').querySelector('.product-title').textContent.trim();
   const price = Number(addButton.dataset.price);
+  const sku = addButton.dataset.sku || '';
+  const category = addButton.closest('.product-card').dataset.category || '';
   const cart = readCart();
-  const existingItem = cart.find(item => item.name === name);
+  const existingItem = cart.find(item => (sku && item.sku === sku) || (!sku && !item.sku && item.name === name));
 
   if (existingItem) {
     existingItem.quantity += 1;
   } else {
-    cart.push({ name, price, quantity: 1 });
+    cart.push({ name, price, quantity: 1, sku, category });
   }
 
   localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));

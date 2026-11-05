@@ -82,7 +82,7 @@
                     <div class="module-stat">
                         <span>Ventas del mes</span>
                         <strong id="monthlySales">$ 0 COP</strong>
-                        <small>Acumulado de pedidos registrados</small>
+                        <small>Ventas registradas este mes</small>
                     </div>
                     <div class="module-stat">
                         <span>Entregas pendientes</span>
@@ -107,8 +107,19 @@
                                 <input id="orderProduct" required placeholder="Ej. Escritorio a medida">
                             </div>
                             <div class="form-group">
-                                <label for="orderValue">Valor estimado (COP)</label>
-                                <input id="orderValue" type="number" min="0" required placeholder="0">
+                                <label for="orderType">Tipo de registro</label>
+                                <select id="orderType">
+                                    <option value="pedido">Pedido</option>
+                                    <option value="venta">Venta</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="orderQuantity">Cantidad</label>
+                                <input id="orderQuantity" type="number" min="1" step="1" value="1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="orderValue">Valor total (COP)</label>
+                                <input id="orderValue" type="number" min="1" required placeholder="0">
                             </div>
                             <div class="form-group">
                                 <label for="orderStatus">Estado</label>
@@ -121,7 +132,7 @@
                             </div>
                             <div class="module-form-actions">
                                 <button class="module-button" type="submit">
-                                    <i class="fa-solid fa-plus"></i> Agregar pedido
+                                    <i class="fa-solid fa-plus"></i> Registrar
                                 </button>
                             </div>
                         </form>
@@ -129,10 +140,10 @@
                     </div>
                 </section>
 
-                <!-- Tabla de Pedidos Recientes -->
+                <!-- Historial de ventas y pedidos -->
                 <section class="module-panel">
                     <div class="module-panel-heading">
-                        <h2>Pedidos recientes</h2>
+                        <h2>Historial de ventas y pedidos</h2>
                             <span class="module-badge" id="orderCount">0 pedidos</span>
                     </div>
                     <div class="module-table-wrap">
@@ -140,10 +151,13 @@
                             <thead>
                                 <tr>
                                     <th>Pedido</th>
+                                    <th>Fecha</th>
+                                    <th>Tipo</th>
                                     <th>Cliente</th>
                                     <th>Producto</th>
                                     <th>Valor</th>
                                     <th>Estado</th>
+                                    <th>Acción</th>
                                 </tr>
                             </thead>
                             <tbody id="orderRows"></tbody>

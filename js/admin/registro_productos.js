@@ -80,7 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 ? 'Reposición de stock'
                 : entry.tipo === 'precio'
                     ? 'Precio actualizado'
-                    : 'Producto registrado';
+                    : entry.tipo === 'venta'
+                        ? 'Venta a cliente'
+                        : entry.tipo === 'pedido'
+                            ? 'Pedido registrado'
+                            : 'Producto registrado';
             const productCell = document.createElement('td');
             productCell.textContent = `${entry.nombre || 'Producto'}${entry.sku ? ` · ${entry.sku}` : ''}`;
             const detailCell = document.createElement('td');
@@ -89,6 +93,12 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (entry.tipo === 'precio') {
                 const oldPrice = entry.precioAnterior === null ? 'Sin precio' : formatPrice(entry.precioAnterior);
                 detailCell.textContent = `Precio: ${oldPrice} → ${formatPrice(entry.precioNuevo)}`;
+            } else if (entry.tipo === 'venta' || entry.tipo === 'pedido') {
+                const stockDetail = entry.stockAnterior === null || entry.stockAnterior === undefined
+                    ? ''
+                    : ` · Stock: ${entry.stockAnterior} → ${entry.stockNuevo}`;
+                const orderDetail = entry.orderId ? ` · Pedido ${entry.orderId}` : '';
+                detailCell.textContent = `${entry.cantidad} ${entry.unidad || 'unidad(es)'} × ${formatPrice(entry.precio)}${stockDetail}${orderDetail}`;
             } else {
                 const price = entry.precio === undefined ? 'Precio no registrado' : formatPrice(entry.precio);
                 detailCell.textContent = `Stock inicial: ${entry.cantidad} ${entry.unidad || ''} · ${price}`.trim();
