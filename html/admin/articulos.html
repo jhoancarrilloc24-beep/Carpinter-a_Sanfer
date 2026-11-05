@@ -76,7 +76,7 @@
                 <div class="module-toolbar">
                     <div>
                         <h2>Listado de artículos</h2>
-                        <p><span id="articleCount">5</span> referencias registradas</p>
+                        <p><span id="articleCount">0</span> referencias registradas</p>
                     </div>
                     <a class="module-action" href="registro_productos.html">
                         <i class="fa-solid fa-plus"></i> Registrar artículo
@@ -92,7 +92,7 @@
                             <select class="module-select" id="stockFilter" aria-label="Filtrar por estado">
                                 <option value="all">Todos los estados</option>
                                 <option value="ok">Stock suficiente</option>
-                                <option value="low">Reponer</option>
+                                <option value="low">Rellenar</option>
                             </select>
                         </div>
                     </div>
@@ -107,50 +107,10 @@
                                     <th>Unidad</th>
                                     <th>Existencias</th>
                                     <th>Estado</th>
+                                    <th>Acción</th>
                                 </tr>
                             </thead>
-                            <tbody id="articleRows">
-                                <tr data-stock="ok">
-                                    <td>MEL-18</td>
-                                    <td>Escritorio</td>
-                                    <td>Muebles</td>
-                                    <td>Pieza</td>
-                                    <td>34</td>
-                                    <td><span class="module-badge success">Disponible</span></td>
-                                </tr>
-                                <tr data-stock="ok">
-                                    <td>CLO-08</td>
-                                    <td>Closet</td>
-                                    <td>Muebles</td>
-                                    <td>Pieza</td>
-                                    <td>8</td>
-                                    <td><span class="module-badge success">Disponible</span></td>
-                                </tr>
-                                <tr data-stock="ok">
-                                    <td>PEI-08</td>
-                                    <td>Peinadora</td>
-                                    <td>Muebles</td>
-                                    <td>Pieza</td>
-                                    <td>8</td>
-                                    <td><span class="module-badge success">Disponible</span></td>
-                                </tr>
-                                <tr data-stock="ok">
-                                    <td>NOC-10</td>
-                                    <td>Nochero</td>
-                                    <td>Muebles</td>
-                                    <td>Pieza</td>
-                                    <td>10</td>
-                                    <td><span class="module-badge success">Disponible</span></td>
-                                </tr>
-                                <tr data-stock="low">
-                                    <td>REP-04</td>
-                                    <td>Repisa</td>
-                                    <td>Muebles</td>
-                                    <td>Pieza</td>
-                                    <td>4</td>
-                                    <td><span class="module-badge warning">Revisar stock</span></td>
-                                </tr>
-                            </tbody>
+                            <tbody id="articleRows"></tbody>
                         </table>
                         <p class="module-empty" id="articleEmpty" hidden>No hay artículos que coincidan con la búsqueda.</p>
                     </div>

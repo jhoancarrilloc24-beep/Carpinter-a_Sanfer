@@ -219,6 +219,33 @@ body {
   font-weight: 700;
 }
 
+.cart-view-link {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border: 1px solid var(--accent-gold);
+  border-radius: 6px;
+  background: var(--accent-gold);
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.cart-view-link:hover {
+  border-color: var(--accent-gold-dark);
+  background: var(--accent-gold-dark);
+}
+
+.cart-view-link:focus-visible {
+  outline: 3px solid rgba(198, 138, 76, 0.35);
+  outline-offset: 2px;
+}
+
 /* --- Hero Section --- */
 .hero-section {
   position: relative;

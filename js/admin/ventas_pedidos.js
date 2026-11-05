@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const countLabel = document.getElementById('orderCount');
     const openOrdersLabel = document.getElementById('openOrders');
     const monthlySalesLabel = document.getElementById('monthlySales');
+    const pendingDeliveriesLabel = document.getElementById('pendingDeliveries');
     const storageKey = 'sanfer.orders';
     const currency = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 });
 
@@ -36,9 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const updateSummary = (orders) => {
-        countLabel.textContent = `${3 + orders.length} pedidos`;
-        openOrdersLabel.textContent = String(3 + orders.filter((order) => order.status !== 'Entregado').length);
-        const monthlyTotal = 2450000 + orders.reduce((total, order) => total + (Number(order.value) || 0), 0);
+        countLabel.textContent = `${orders.length} pedidos`;
+        openOrdersLabel.textContent = String(orders.filter((order) => order.status !== 'Entregado').length);
+        pendingDeliveriesLabel.textContent = String(orders.filter((order) => order.status !== 'Entregado').length);
+        const monthlyTotal = orders.reduce((total, order) => total + (Number(order.value) || 0), 0);
         monthlySalesLabel.textContent = currency.format(monthlyTotal);
     };
 

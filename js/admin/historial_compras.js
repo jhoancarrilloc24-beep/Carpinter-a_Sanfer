@@ -11,47 +11,7 @@ const ventasTotales = document.querySelector('#ventasTotales');
 const enviosPendientes = document.querySelector('#enviosPendientes');
 const ordersEmpty = document.querySelector('#ordersEmpty');
 
-// =========================================
-// Datos de ejemplo para historial de compras
-// =========================================
-const compras = [
-  {
-    id: 'PED-1042',
-    cliente: 'María Castaño',
-    productos: ['Repisa Premium Gris x2', 'Soporte de madera x1'],
-    total: 180000,
-    metodo: 'Tarjeta de crédito',
-    estado: 'pendiente',
-    direccion: 'Calle 12 # 3-45, Cúcuta'
-  },
-  {
-    id: 'PED-1048',
-    cliente: 'Luis Ortega',
-    productos: ['Set x3 repisas', 'Accesorios de montaje'],
-    total: 260000,
-    metodo: 'Nequi',
-    estado: 'enviado',
-    direccion: 'Av. 4 # 5-70, Los patios'
-  },
-  {
-    id: 'PED-1053',
-    cliente: 'Ana Salazar',
-    productos: ['Repisa flotante blanca x1'],
-    total: 80000,
-    metodo: 'Efectivo',
-    estado: 'entregado',
-    direccion: 'Cra 6 # 10-22, Villa del Rosario'
-  },
-  {
-    id: 'PED-1061',
-    cliente: 'Daniel Rueda',
-    productos: ['Mueble de madera x1', 'Kit de herrajes x2'],
-    total: 312000,
-    metodo: 'Tarjeta de crédito',
-    estado: 'pendiente',
-    direccion: 'Calle 9 # 14-34, Cúcuta'
-  }
-];
+const compras = [];
 
 // =========================================
 // Funciones de render y filtros

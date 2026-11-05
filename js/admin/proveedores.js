@@ -4,6 +4,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('supplierForm');
     const rows = document.getElementById('supplierRows');
+    const count = document.getElementById('supplierCount');
     const message = document.getElementById('supplierMessage');
     const storageKey = 'sanfer.suppliers';
 
@@ -31,7 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
         rows.append(row);
     };
 
-    readSuppliers().forEach(appendSupplier);
+    const savedSuppliers = readSuppliers();
+    savedSuppliers.forEach(appendSupplier);
+    count.textContent = `${savedSuppliers.length} activos`;
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         const suppliers = readSuppliers();
@@ -43,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         localStorage.setItem(storageKey, JSON.stringify(suppliers));
         appendSupplier(suppliers[suppliers.length - 1]);
+        count.textContent = `${suppliers.length} activos`;
         form.reset();
         message.textContent = 'Proveedor guardado en este navegador.';
     });

@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const savedCategories = readCategories();
     savedCategories.forEach(appendCategory);
-    count.textContent = `${4 + savedCategories.length} categorías`;
+    count.textContent = `${savedCategories.length} categorías`;
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         const name = document.getElementById('categoryName').value.trim();
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         categories.push({ name, description });
         localStorage.setItem(storageKey, JSON.stringify(categories));
         appendCategory({ name, description });
-        count.textContent = `${4 + categories.length} categorías`;
+        count.textContent = `${categories.length} categorías`;
         form.reset();
         message.textContent = 'Categoría agregada.';
     });

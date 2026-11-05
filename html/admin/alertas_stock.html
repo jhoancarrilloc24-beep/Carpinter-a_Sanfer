@@ -76,17 +76,17 @@
                 <section class="module-stats">
                     <div class="module-stat">
                         <span>Alertas activas</span>
-                        <strong id="activeAlertCount">2</strong>
+                        <strong id="activeAlertCount">0</strong>
                         <small>Requieren atención</small>
                     </div>
                     <div class="module-stat">
                         <span>Críticas</span>
-                        <strong>1</strong>
+                        <strong id="criticalAlertCount">0</strong>
                         <small>Existencias agotadas o mínimas</small>
                     </div>
                     <div class="module-stat">
                         <span>Última revisión</span>
-                        <strong class="alert-date">Hoy</strong>
+                        <strong class="alert-date" id="lastReviewDate">Sin datos</strong>
                         <small>Control de inventario</small>
                     </div>
                 </section>
@@ -101,29 +101,6 @@
                     </div>
 
                     <div id="alertList">
-                        <article class="module-alert" data-alert>
-                            <span class="module-alert-icon">
-                                <i class="fa-solid fa-triangle-exclamation"></i>
-                            </span>
-                            <div class="module-alert-content">
-                                <strong>Repisa · Stock bajo</strong>
-                                <p>Quedan 4 piezas. Revisa la reposición para mantener disponibilidad.</p>
-                                <span class="module-badge warning">Reorden recomendado</span>
-                            </div>
-                            <button class="module-button secondary" type="button" data-resolve>Marcar revisada</button>
-                        </article>
-
-                        <article class="module-alert" data-alert>
-                            <span class="module-alert-icon">
-                                <i class="fa-solid fa-box-open"></i>
-                            </span>
-                            <div class="module-alert-content">
-                                <strong>Tablero MDF · Revisión pendiente</strong>
-                                <p>Verifica las existencias físicas del material en el estante B-04.</p>
-                                <span class="module-badge danger">Verificar cantidad</span>
-                            </div>
-                            <button class="module-button secondary" type="button" data-resolve>Marcar revisada</button>
-                        </article>
                     </div>
 
                     <p class="module-empty" id="noAlerts" hidden>No hay alertas pendientes.</p>

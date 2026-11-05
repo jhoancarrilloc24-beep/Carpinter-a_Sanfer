@@ -16,6 +16,16 @@
     box-shadow: 0 4px 16px rgba(44, 37, 35, 0.06);
 }
 
+.product-history-panel {
+    margin-top: 24px;
+}
+
+.product-history-panel .module-panel-heading > div > p {
+    margin-top: 5px;
+    color: var(--text-muted);
+    font-size: 0.84rem;
+}
+
 .form-card-heading {
     padding: 22px 26px;
     border-bottom: 1px solid var(--border-color);
@@ -102,6 +112,82 @@
     box-shadow: 0 0 0 3px rgba(198, 138, 76, 0.16);
 }
 
+.form-group input[readonly] {
+    background: #f7f5f1;
+    color: var(--text-muted);
+}
+
+.image-upload-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px 20px;
+    padding: 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: #fffdfa;
+}
+
+.image-upload-section h3 {
+    margin: 4px 0;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.image-upload-section p,
+.image-file-name {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.image-upload-control {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 13px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--text-main);
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.image-upload-control:hover {
+    border-color: var(--accent-gold);
+}
+
+#imagen {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+#imagen:focus-visible + .image-preview {
+    outline: 2px solid var(--accent-gold);
+}
+
+.image-preview {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-height: 240px;
+    object-fit: contain;
+    border-radius: 4px;
+    background: #f7f5f1;
+}
+
+.image-file-name {
+    grid-column: 1 / -1;
+    overflow-wrap: anywhere;
+}
+
 .form-buttons {
     display: flex;
     justify-content: flex-end;
@@ -168,6 +254,14 @@
     .form-row {
         grid-template-columns: 1fr;
         gap: 18px;
+    }
+
+    .image-upload-section {
+        grid-template-columns: 1fr;
+    }
+
+    .image-upload-control {
+        width: 100%;
     }
 
     .product-form {
